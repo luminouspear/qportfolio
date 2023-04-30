@@ -91,7 +91,7 @@ const Works = () => {
 			<span className="hash-span" id="projects">
 				&nbsp;
 			</span>
-			<div className="max-w-7xl">
+			<div className="max-w-7xl mx-auto">
 				<motion.div variants={textVariant()}>
 					<p className={styles.darkSectionSubText}>
 						{sectionOverviews[3].subtitle}
