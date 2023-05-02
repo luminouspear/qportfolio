@@ -5,8 +5,10 @@ This portfolio site is a single-page React application built with modern web dev
 ## Technologies & Libraries Used
 
 - React
+- Vite
 - Tailwind CSS
 - ThreeJS
+- React Vertical Timeline Component
 - Tilt
 - Google Fonts (Gloock & Archivo)
 - Noun Project
