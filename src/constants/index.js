@@ -1,4 +1,8 @@
 import {
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 53893bb (updates to UI)
 	mobile,
 	backend,
 	creator,
@@ -13,11 +17,32 @@ import {
 	redux,
 	tailwind,
 	nodejs,
+<<<<<<< HEAD
+=======
+=======
+	www,
+	appstore,
+	javascript,
+	html,
+	css,
+	reactjs,
+	tailwind,
+	nodejs,
+	python,
+>>>>>>> 5b195a3 (Some visual updates/stability changes)
+>>>>>>> 53893bb (updates to UI)
 	mongodb,
 	git,
 	figma,
 	affinity,
 	axure,
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+	framer,
+>>>>>>> 5b195a3 (Some visual updates/stability changes)
+>>>>>>> 53893bb (updates to UI)
 	illustrator,
 	photoshop,
 	sketch,
@@ -34,6 +59,23 @@ import {
 	mdx,
 	dcl,
 	resorts,
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+	danthumb,
+	danwall,
+	icon_adulteducation,
+	icon_webdevelopment,
+	icon_uxdesign,
+	icon_gamedesign,
+	gallery1,
+	gallery2,
+	gallery3,
+	quentin_caron,
+	janice_cheng,
+>>>>>>> 5b195a3 (Some visual updates/stability changes)
+>>>>>>> 53893bb (updates to UI)
 } from "../assets";
 
 export const navLinks = [
@@ -42,8 +84,18 @@ export const navLinks = [
 		title: "About",
 	},
 	{
+<<<<<<< HEAD
 		id: "work",
 		title: "Work",
+=======
+<<<<<<< HEAD
+		id: "work",
+		title: "Work",
+=======
+		id: "projects",
+		title: "My Projects",
+>>>>>>> 5b195a3 (Some visual updates/stability changes)
+>>>>>>> 53893bb (updates to UI)
 	},
 	{
 		id: "contact",
@@ -55,7 +107,16 @@ const sectionOverviews = [
 	{
 		title: "Overview",
 		subtitle: "Introduction",
+<<<<<<< HEAD
 		body: "I'm a user experience designer, educator and developer with over 20 years of experience working with professional teams, developing young minds in the classroom, and leading teams to deliver high quality designs.",
+=======
+<<<<<<< HEAD
+		body: "I'm a user experience designer, educator and developer with over 20 years of experience working with professional teams, developing young minds in the classroom, and leading teams to deliver high quality designs.",
+=======
+		body: "I'm a user experience designer, educator and developer with over 20 years of experience working with professional teams, developing young minds in the classroom, and leading teams to deliver high quality designs.\n Let's build something great together.",
+		image: danthumb,
+>>>>>>> 5b195a3 (Some visual updates/stability changes)
+>>>>>>> 53893bb (updates to UI)
 	},
 	{
 		title: "My Work So Far",
@@ -81,11 +142,37 @@ const sectionOverviews = [
 		title: "Let's Get Started",
 		subtitle: "Let's build the future together",
 		body: "Shoot me an email or get in contact with me via LinkedIn. I'm currently accepting freelance work and consultancy for UX/software design and development.",
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 53893bb (updates to UI)
 	},
 ];
 
 const footer = {
 	text: "© 2023 Dan McCollum.",
+<<<<<<< HEAD
+=======
+=======
+		image: danwall,
+	},
+];
+
+const heroGallery = [
+	{ image: gallery1, alt: "A wizard dreams up a castle." },
+	{
+		image: gallery2,
+		alt: "A a magical wizard school where students are learning.",
+	},
+	{ image: gallery3, alt: "A wizard dreams up a castle." },
+];
+
+const footer = {
+	text: "© 2023 Dan McCollum",
+	githubText: "View the source code for this website on Github",
+	githubLink: "https://github.com/luminouspear/qportfolio",
+>>>>>>> 5b195a3 (Some visual updates/stability changes)
+>>>>>>> 53893bb (updates to UI)
 	text_rights:
 		"All rights reserved. Images used on this site are sourced from external platforms and credited to their respective creators.",
 };
@@ -93,6 +180,10 @@ const footer = {
 const services = [
 	{
 		title: "UX Designer",
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 53893bb (updates to UI)
 		icon: web,
 	},
 	{
@@ -106,6 +197,24 @@ const services = [
 	{
 		title: "Web Developer",
 		icon: creator,
+<<<<<<< HEAD
+=======
+=======
+		icon: icon_uxdesign,
+	},
+	{
+		title: "Game Designer",
+		icon: icon_gamedesign,
+	},
+	{
+		title: "Adult Educator",
+		icon: icon_adulteducation,
+	},
+	{
+		title: "Web Developer",
+		icon: icon_webdevelopment,
+>>>>>>> 5b195a3 (Some visual updates/stability changes)
+>>>>>>> 53893bb (updates to UI)
 	},
 ];
 
@@ -113,12 +222,26 @@ const technologies = [
 	{ name: "Figma", icon: figma },
 	{ name: "Sketch", icon: sketch },
 	{ name: "Axure RP", icon: axure },
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+	{ name: "Framer", icon: framer },
+>>>>>>> 5b195a3 (Some visual updates/stability changes)
+>>>>>>> 53893bb (updates to UI)
 	{ name: "Adobe Photoshop", icon: photoshop },
 	{ name: "Adobe Illustrator", icon: illustrator },
 	{ name: "Adobe Xd", icon: xd },
 	{ name: "Affinity Suite", icon: affinity },
 	{ name: "Zeplin", icon: zeplin },
+<<<<<<< HEAD
 	{ name: "Adobe Illustrator", icon: illustrator },
+=======
+<<<<<<< HEAD
+	{ name: "Adobe Illustrator", icon: illustrator },
+=======
+>>>>>>> 5b195a3 (Some visual updates/stability changes)
+>>>>>>> 53893bb (updates to UI)
 	{
 		name: "HTML 5",
 		icon: html,
@@ -140,6 +263,16 @@ const technologies = [
 		icon: reactjs,
 	},
 	{
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+		name: "Python",
+		icon: python,
+	},
+	{
+>>>>>>> 5b195a3 (Some visual updates/stability changes)
+>>>>>>> 53893bb (updates to UI)
 		name: "Node JS",
 		icon: nodejs,
 	},
@@ -243,6 +376,10 @@ const additionalExperiences = [
 const testimonials = [
 	{
 		testimonial:
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 53893bb (updates to UI)
 			"I thought it was impossible to make a website as beautiful as our product, but Rick proved me wrong.",
 		name: "Sara Lee",
 		designation: "CFO",
@@ -264,6 +401,24 @@ const testimonials = [
 		designation: "CTO",
 		company: "456 Enterprises",
 		image: "https://randomuser.me/api/portraits/women/6.jpg",
+<<<<<<< HEAD
+=======
+=======
+			"Dan is not only an expert in the design industry but also someone who genuinely cares about his student's growth and success. His intuition and empathy as a teacher have been invaluable in shaping my design style and approach. He even encouraged and supported me in creating a workshop for new designers, igniting a new passion for teaching. If you have the opportunity to work with Dan, I highly recommend taking it – he is an exceptional instructor and mentor who will undoubtedly inspire and guide you to reach your full potential.",
+		name: "Quentin Caron",
+		designation: "Product Designer",
+		company: "Thunkable",
+		image: quentin_caron,
+	},
+	{
+		testimonial:
+			"As a product designer in the SAAS space, Dan's leadership as Lead UX Instructor at General Assembly was instrumental in my professional development. Dan's excellent design communication skills and his versatility as a UX practitioner helped bring clarity to my design process and helped me articulate design principles and decisions to project stakeholders. In my time of knowing Dan, he is always introducing useful methods to team projects that lead to useful product discoveries and better user experiences. Working with Dan is invaluable. I would be honored to learn with him again!",
+		name: "Janice Cheng",
+		designation: "Product Designer",
+		company: "Samsara",
+		image: janice_cheng,
+>>>>>>> 5b195a3 (Some visual updates/stability changes)
+>>>>>>> 53893bb (updates to UI)
 	},
 ];
 
@@ -275,7 +430,15 @@ const projects = [
 		githubLink: true,
 		tags: [
 			{
+<<<<<<< HEAD
 				name: "photoshop",
+=======
+<<<<<<< HEAD
+				name: "photoshop",
+=======
+				name: "eleventy",
+>>>>>>> 5b195a3 (Some visual updates/stability changes)
+>>>>>>> 53893bb (updates to UI)
 				color: "blue-text-gradient",
 			},
 			{
@@ -286,6 +449,16 @@ const projects = [
 				name: "tailwind",
 				color: "pink-text-gradient",
 			},
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+			{
+				name: "stablediffusion",
+				color: "pink-text-gradient",
+			},
+>>>>>>> 5b195a3 (Some visual updates/stability changes)
+>>>>>>> 53893bb (updates to UI)
 		],
 		image: siegecraft,
 		git_source_code_link: "https://github.com/luminouspear/tdsiegecraft",
@@ -304,10 +477,19 @@ const projects = [
 				name: "tailwind",
 				color: "green-text-gradient",
 			},
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 53893bb (updates to UI)
 			{
 				name: "scss",
 				color: "pink-text-gradient",
 			},
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> 5b195a3 (Some visual updates/stability changes)
+>>>>>>> 53893bb (updates to UI)
 		],
 		image: makermanager,
 		location: www,
@@ -423,4 +605,11 @@ export {
 	legacyProjects,
 	sectionOverviews,
 	footer,
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+	heroGallery,
+>>>>>>> 5b195a3 (Some visual updates/stability changes)
+>>>>>>> 53893bb (updates to UI)
 };

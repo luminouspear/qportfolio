@@ -22,3 +22,10 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+*qportfolio.sketch*
+>>>>>>> 5b195a3 (Some visual updates/stability changes)
+>>>>>>> 53893bb (updates to UI)

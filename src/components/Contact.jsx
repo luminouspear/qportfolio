@@ -65,10 +65,30 @@ const Contact = () => {
 	};
 
 	return (
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 53893bb (updates to UI)
 		<div className="mt-12 flex flex-col-reverse lg:flex-row gap-10 overflow-hidden">
 			<motion.div
 				variants={slideIn("left", "tween", 0.2, 0.5)}
 				className="lg:w-3/4 w-full bg-primary-green p-8 rounded-lg"
+<<<<<<< HEAD
+=======
+=======
+		<div className="lg:mt-12 2xl:mt-0 flex flex-col-reverse lg:flex-row-reverse gap-10 overflow-hidden lg:relative">
+			<div className=" lg:w-full lg:h-full lg:py-12 lg:px-12 lg:my-36 2xl:my-12">
+				<img
+					src={sectionOverviews[5].image}
+					alt="Contact Dan"
+					className=" h-full w-full object-contain rounded-lg"
+				/>
+			</div>
+			<motion.div
+				variants={slideIn("left", "tween", 0.2, 0.5)}
+				className="lg:w-1/2 w-full bg-primary-green p-8 rounded-lg lg:absolute lg:left-0 lg:h-fit 2xl:top-16"
+>>>>>>> 5b195a3 (Some visual updates/stability changes)
+>>>>>>> 53893bb (updates to UI)
 			>
 				<p className={styles.sectionSubText}>
 					{sectionOverviews[5].subtitle}
