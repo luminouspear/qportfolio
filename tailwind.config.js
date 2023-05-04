@@ -19,15 +19,9 @@ module.exports = {
 				"primary-green": "#122111",
 				"secondary-green": "#2FB1A2",
 				"qportfolio-white": "#F5F2ED",
-<<<<<<< HEAD
 				"qportfolio-sage": "#B5B07D",
-=======
-<<<<<<< HEAD
 				"qportfolio-sage": "#B5B07D",
-=======
 				"qportfolio-sage": "#D8E8C1",
->>>>>>> 5b195a3 (Some visual updates/stability changes)
->>>>>>> 53893bb (updates to UI)
 				"qportfolio-black": "#0C0E07",
 				"black-100": "#100d25",
 				"black-200": "#090325",

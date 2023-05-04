@@ -45,6 +45,13 @@ body {
 	min-height: 100vh;
 }
 
+.testborder {
+	border: 4px solid #f00;
+}
+.testborder2 {
+	border: 4px solid #0ff;
+}
+
 .black-gradient {
 	background: #000000; /* fallback for old browsers */
 	background: -webkit-linear-gradient(

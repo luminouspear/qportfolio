@@ -1,140 +1,60 @@
 import React, { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
-
 import { styles } from "../styles";
-<<<<<<< HEAD
-import { ComputersCanvas } from "./canvas";
-=======
-<<<<<<< HEAD
-import { ComputersCanvas } from "./canvas";
-=======
-
 import { heroGallery } from "../constants";
->>>>>>> 5b195a3 (Some visual updates/stability changes)
->>>>>>> 53893bb (updates to UI)
 
 const Hero = () => {
 	const [activeUnderline, setActiveUnderline] = useState("build");
 	const [userInteraction, setUserInteraction] = useState(false);
-<<<<<<< HEAD
 	const intervalIdRef = useRef(null);
-=======
-<<<<<<< HEAD
-	const intervalIdRef = useRef(null);
-=======
 	const [currentImage, setCurrentImage] = useState(heroGallery[0].image);
 	const [currentImageAlt, setCurrentImageAlt] = useState(heroGallery[0].alt);
-  const intervalIdRef = useRef(null);
-  const imgRef = useRef(null);
->>>>>>> 5b195a3 (Some visual updates/stability changes)
->>>>>>> 53893bb (updates to UI)
+	const imgRef = useRef(null);
 
 	useEffect(() => {
 		const changeActiveUnderline = () => {
 			setActiveUnderline((prev) => {
 				switch (prev) {
 					case "build":
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> 53893bb (updates to UI)
-						return "inspire";
-					case "inspire":
-						return "design";
-					case "design":
-					default:
-<<<<<<< HEAD
-=======
-=======
 						setCurrentImage(heroGallery[1].image);
 						setCurrentImageAlt(heroGallery[1].alt);
 						return "inspire";
 					case "inspire":
 						setCurrentImage(heroGallery[2].image);
 						setCurrentImageAlt(heroGallery[2].alt);
-
 						return "design";
 					case "design":
 					default:
 						setCurrentImage(heroGallery[0].image);
 						setCurrentImageAlt(heroGallery[0].alt);
-
->>>>>>> 5b195a3 (Some visual updates/stability changes)
->>>>>>> 53893bb (updates to UI)
 						return "build";
 				}
 			});
 		};
 
 		if (!userInteraction) {
-<<<<<<< HEAD
-			intervalIdRef.current = setInterval(changeActiveUnderline, 5000);
-=======
-<<<<<<< HEAD
-			intervalIdRef.current = setInterval(changeActiveUnderline, 5000);
-=======
 			intervalIdRef.current = setInterval(changeActiveUnderline, 9000);
->>>>>>> 5b195a3 (Some visual updates/stability changes)
->>>>>>> 53893bb (updates to UI)
 		}
 
 		return () => {
 			clearInterval(intervalIdRef.current);
 		};
-<<<<<<< HEAD
 	}, [userInteraction]);
-=======
-<<<<<<< HEAD
-	}, [userInteraction]);
-=======
-  }, [userInteraction]);
 
-  useEffect(() => {
+	useEffect(() => {
 		if (imgRef.current) {
 			imgRef.current.style.animation = "none";
 			imgRef.current.offsetHeight; // Trigger reflow
 			imgRef.current.style.animation =
 				"pan-right 20s cubic-bezier(0.25, 0.1, 0.25, 1) forwards";
 		}
-  }, [currentImage, currentImageAlt]);
->>>>>>> 5b195a3 (Some visual updates/stability changes)
->>>>>>> 53893bb (updates to UI)
+	}, [currentImage, currentImageAlt]);
 
 	const handleClick = (value) => {
 		setActiveUnderline(value);
 		setUserInteraction(true);
 	};
 
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> 53893bb (updates to UI)
-	return (
-		<section className="mx-auto mt-24">
-			<div
-				className={`${styles.paddingX}  max-w-7xl mx-auto flex flex-row items-start gap-6`}
-			>
-				<div className="flex flex-col justify-center items-center mt-5">
-					<div className="w-5 h-5 rounded-full bg-primary-green" />
-					<div className="w-1 sm:h-80 h-40 violet-gradient" />
-				</div>
-				<div className="">
-					<h1
-						className={`${styles.heroHeadText} text-qportfolio-black`}
-					>
-						Hi, I'm{" "}
-						<span className="text-primary-green font-gloock">
-							Dan McCollum
-						</span>
-					</h1>
-					<div
-						className={`${styles.heroSubText} mt-2 text-qportfolio-black leading-[2.75rem]`}
-					>
-						<div className="flex gap-2">
-							<p>I</p>
-<<<<<<< HEAD
-=======
-=======
 	const handleHover = (value) => {
 		setCurrentImage(value.image);
 		setCurrentImageAlt(value.alt);
@@ -195,8 +115,6 @@ const Hero = () => {
 									I
 								</span>
 							</p>
->>>>>>> 5b195a3 (Some visual updates/stability changes)
->>>>>>> 53893bb (updates to UI)
 							<p>
 								<span
 									className={`${
@@ -205,16 +123,10 @@ const Hero = () => {
 											: ""
 									} cursor-pointer `}
 									onClick={() => handleClick("build")}
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
 									onMouseOver={() =>
 										handleHover(heroGallery[0])
 									}
 									onMouseLeave={() => handleMouseLeave()}
->>>>>>> 5b195a3 (Some visual updates/stability changes)
->>>>>>> 53893bb (updates to UI)
 								>
 									<a href="#work">build</a>
 								</span>{" "}
@@ -226,16 +138,10 @@ const Hero = () => {
 											: ""
 									} cursor-pointer `}
 									onClick={() => handleClick("inspire")}
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
 									onMouseOver={() =>
 										handleHover(heroGallery[1])
 									}
 									onMouseLeave={() => handleMouseLeave()}
->>>>>>> 5b195a3 (Some visual updates/stability changes)
->>>>>>> 53893bb (updates to UI)
 								>
 									<a href="#testimonials">inspire</a>
 								</span>{" "}
@@ -247,26 +153,20 @@ const Hero = () => {
 											: ""
 									} cursor-pointer `}
 									onClick={() => handleClick("design")}
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
 									onMouseOver={() =>
 										handleHover(heroGallery[2])
 									}
 									onMouseLeave={() => handleMouseLeave()}
->>>>>>> 5b195a3 (Some visual updates/stability changes)
->>>>>>> 53893bb (updates to UI)
 								>
 									<a href="#projects">design</a>
 								</span>
-								&nbsp;whatever's coming next.
+								&nbsp;whatever&apos;s coming next.
 							</p>
 						</div>
 						<div className="ml-4 mt-8 flex flex-row gap-4 ">
 							<a href="#contact">
 								<button className="px-6 py-4 rounded-lg font-bold text-xl bg-primary-green hover:bg-secondary-green text-white">
-									Let's Talk
+									Let&apos;s Talk
 								</button>
 							</a>
 							<a href="#work">
@@ -277,10 +177,7 @@ const Hero = () => {
 						</div>
 					</div>
 				</div>
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
+
 				<div className="md:h-auto max-h-1/2 min-w-full overflow-hidden md:rounded-md flex">
 					<div className="md:w-full md:h-full overflow-hidden isolate ">
 						<img
@@ -294,8 +191,6 @@ const Hero = () => {
 						&nbsp;
 					</div>
 				</div>
->>>>>>> 5b195a3 (Some visual updates/stability changes)
->>>>>>> 53893bb (updates to UI)
 			</div>
 		</section>
 	);

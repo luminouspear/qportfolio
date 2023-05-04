@@ -58,15 +58,8 @@ const Experience = () => {
 	return (
 		<div className={`${styles.paddingX} mx-auto max-w-7xl mt-12`}>
 			<motion.div variants={textVariant()}>
-<<<<<<< HEAD
-				<p className={styles.sectionSubText}>
-=======
-<<<<<<< HEAD
-				<p className={styles.sectionSubText}>
-=======
+
 				<p className={styles.darkSectionSubText}>
->>>>>>> 5b195a3 (Some visual updates/stability changes)
->>>>>>> 53893bb (updates to UI)
 					{sectionOverviews[1].subtitle}
 				</p>
 				<h2 className={styles.sectionHeadText}>
