@@ -1,7 +1,4 @@
-import {
-	VerticalTimeline,
-	VerticalTimelineElement,
-} from "react-vertical-timeline-component";
+import { VerticalTimeline } from "react-vertical-timeline-component";
 import { motion } from "framer-motion";
 
 import "react-vertical-timeline-component/style.min.css";
@@ -14,54 +11,15 @@ import {
 } from "../constants";
 import { SectionWrapper } from "../hoc";
 import { textVariant } from "../utils/motion";
-
-const ExperienceCard = ({ experience }) => {
-	return (
-		<VerticalTimelineElement
-			contentStyle={{ background: "#122111", color: "#122111" }}
-			contentArrowStyle={{ borderRight: "7px solid #122111" }}
-			date={experience.date}
-			iconStyle={{ background: experience.iconBg }}
-			icon={
-				<div className="flex justify-center items-center w-full h-full">
-					<img
-						src={experience.icon}
-						alt={experience.company_name}
-						className="w-[72%] h-[72%] object-contain "
-					/>
-				</div>
-			}
-		>
-			<div>
-				<h3 className="text-qportfolio-white font-gloock text-2xl  -mb-2">
-					{experience.title}
-				</h3>
-				<p className="text-qportfolio-white font-semibold m-0 text-sm">
-					{experience.company_name}
-				</p>
-			</div>
-			<ul className="mt-5 list-disc ml-5 space-y-2">
-				{experience.points.map((point, index) => (
-					<li
-						key={`experience-point-${index}`}
-						className="text-qportfolio-white text-sm pl-1 tracking-wider"
-					>
-						{point}
-					</li>
-				))}
-			</ul>
-		</VerticalTimelineElement>
-	);
-};
+import { ExperienceCard } from "./ExperienceCard";
 
 const Experience = () => {
 	return (
 		<div className={`${styles.paddingX} mx-auto max-w-7xl mt-12`}>
 			<motion.div variants={textVariant()}>
-
-				<p className={styles.darkSectionSubText}>
+				<h3 className={styles.darkSectionSubText}>
 					{sectionOverviews[1].subtitle}
-				</p>
+				</h3>
 				<h2 className={styles.sectionHeadText}>
 					{sectionOverviews[1].title}
 				</h2>

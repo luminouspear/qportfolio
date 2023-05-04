@@ -62,7 +62,7 @@ const sectionOverviews = [
 	{
 		title: "Overview",
 		subtitle: "Introduction",
-		body: "I'm a user experience designer, educator and developer with over 20 years of experience working with professional teams, developing young minds in the classroom, and leading teams to deliver high quality designs.\n Let\'s build something great together.",
+		body: "I'm a user experience designer, educator and developer with over 20 years of experience working with professional teams, developing young minds in the classroom, and leading teams to deliver high quality designs.\n Let's build something great together.",
 		image: danthumb,
 	},
 	{
@@ -91,8 +91,19 @@ const sectionOverviews = [
 		body: "Shoot me an email or get in contact with me via LinkedIn. I'm currently accepting freelance work and consultancy for UX/software design and development.",
 		image: danwall,
 	},
+	{
+		title: "Blog",
+		subtitle: "Thoughts about things",
+		body: "A collection of thoughts on design, development, teaching and all things between.",
+	},
+	{
+		text: "© 2023 Dan McCollum",
+		githubText: "View the source code for this website on Github",
+		githubLink: "https://github.com/luminouspear/qportfolio",
+		text_rights:
+			"All rights reserved. Images used on this site are sourced from external platforms and credited to their respective creators.",
+	},
 ];
-
 
 const heroGallery = [
 	{ image: gallery1, alt: "A wizard dreams up a castle." },
@@ -103,13 +114,6 @@ const heroGallery = [
 	{ image: gallery3, alt: "A desert with gigantic cloud trees." },
 ];
 
-const footer = {
-	text: "© 2023 Dan McCollum",
-	githubText: "View the source code for this website on Github",
-	githubLink: "https://github.com/luminouspear/qportfolio",
-	text_rights:
-		"All rights reserved. Images used on this site are sourced from external platforms and credited to their respective creators.",
-};
 
 const services = [
 	{
@@ -267,7 +271,8 @@ const additionalExperiences = [
 
 const testimonials = [
 	{
-			testimonial: "Dan is not only an expert in the design industry but also someone who genuinely cares about his student's growth and success. His intuition and empathy as a teacher have been invaluable in shaping my design style and approach. He even encouraged and supported me in creating a workshop for new designers, igniting a new passion for teaching. If you have the opportunity to work with Dan, I highly recommend taking it – he is an exceptional instructor and mentor who will undoubtedly inspire and guide you to reach your full potential.",
+		testimonial:
+			"Dan is not only an expert in the design industry but also someone who genuinely cares about his student's growth and success. His intuition and empathy as a teacher have been invaluable in shaping my design style and approach. He even encouraged and supported me in creating a workshop for new designers, igniting a new passion for teaching. If you have the opportunity to work with Dan, I highly recommend taking it – he is an exceptional instructor and mentor who will undoubtedly inspire and guide you to reach your full potential.",
 		name: "Quentin Caron",
 		designation: "Product Designer",
 		company: "Thunkable",
@@ -433,6 +438,53 @@ const legacyProjects = [
 	},
 ];
 
+const blogTestData = [
+	{
+		id: 1,
+		title: "Getting Started with React",
+		author: "Jane Doe",
+		date: "2023-05-01",
+		content:
+			"In this blog post, we'll explore the basics of React, a popular JavaScript library for building user interfaces. We'll start by setting up a new React project, then dive into components, props, and state management.",
+		image: "https://picsum.photos/300/200",
+		tags: ["React", "JavaScript", "Frontend"],
+		featured: false,
+	},
+	{
+		id: 2,
+		title: "An Introduction to Tailwind CSS",
+		author: "John Smith",
+		date: "2023-05-10",
+		content:
+			"Tailwind CSS is a utility-first CSS framework that makes it easy to build custom designs with ease. In this blog post, we'll cover the basics of setting up a Tailwind CSS project and explore some of its powerful features.",
+		image: "https://picsum.photos/300/200",
+		tags: ["Tailwind CSS", "CSS", "Design"],
+		featured: false,
+	},
+	{
+		id: 3,
+		title: "How to Boost Your Productivity as a Developer",
+		author: "Alice Brown",
+		date: "2023-02-15",
+		content:
+			"Being a developer can be both rewarding and challenging. In this post, we'll explore strategies to boost your productivity...",
+		image: "https://picsum.photos/300/200",
+		tags: ["Productivity", "Developer", "Tips"],
+		featured: true,
+	},
+	{
+		id: 4,
+		title: "Demystifying CSS Grid Layout",
+		author: "Bob Johnson",
+		date: "2023-01-30",
+		content:
+			"CSS Grid Layout is a powerful tool for creating responsive and flexible layouts. In this post, we'll dive into the basics...",
+		image: "https://picsum.photos/300/200",
+		tags: ["CSS", "Grid", "Web Development"],
+		featured: false,
+	},
+];
+
 export {
 	services,
 	technologies,
@@ -442,6 +494,6 @@ export {
 	projects,
 	legacyProjects,
 	sectionOverviews,
-	footer,
 	heroGallery,
+	blogTestData,
 };

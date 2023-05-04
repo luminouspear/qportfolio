@@ -8,7 +8,7 @@ import { FeedbackCard } from "./FeedbackCard";
 
 const Testimonials = () => {
 	return (
-		<div className="md:px-32 xl:px-[13rem] 2xl:px-[22rem] px-12  py-12 translate-x-6  bg-primary-green ">
+		<div className="md:px-32 xl:px-[13rem] 2xl:px-[22rem] px-12  py-12   bg-primary-green ">
 			<span className="hash-span" id="testimonials">
 				&nbsp;
 			</span>

@@ -1,4 +1,5 @@
-import { BrowserRouter } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import React from "react";
 
 import {
 	About,
@@ -10,14 +11,16 @@ import {
 	Tech,
 	Projects,
 	Footer,
+	BlogList,
 } from "./components";
+import Layout from "./Layout";
 
 const App = () => {
 	const debugWindowSize = true;
 
 	return (
 		<BrowserRouter>
-			<div className=" z-[1000] bg-qportfolio-white">
+			<div className=" z-0 bg-qportfolio-white">
 				{debugWindowSize && (
 					<div className="fixed top-24 right-0 flex items-center justify-center w-12 h-12 font-bold text-center align-middle bg-cyan-400 text-black/90">
 						<span className="sm:hidden">xs</span>
@@ -45,16 +48,27 @@ const App = () => {
 						</span>
 					</div>
 				)}
-				<Navbar />
+				<Routes>
+					<Route path="/" element={<Layout />}>
+						<Route
+							index
+							element={
+								<React.Fragment>
 
-				<Hero />
-				<About />
-				<Experience />
-				<Tech />
-				<Projects />
-				<Feedbacks />
-					<Contact />
-					<Footer />
+									<Hero />
+									<BlogList />
+									<About />
+									<Experience />
+									<Tech />
+									<Projects />
+									<Feedbacks />
+									<Contact />
+								</React.Fragment>
+							}
+						/>
+						<Route path={"/login"} element={<div>Login</div>} />
+					</Route>
+				</Routes>
 			</div>
 		</BrowserRouter>
 	);

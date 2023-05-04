@@ -1,9 +1,12 @@
-import { footer } from "../constants";
+import { sectionOverviews }  from "../constants";
 import { github } from "../assets";
 
 const Footer = () => {
+
+	const footer = sectionOverviews[7]
+
 	return (
-		<div className="bg-qportfolio-black translate-x-6 w-screen mx-auto text-center font-thin text-sm py-6 mt-4 text-qportfolio-white">
+		<div className="bg-qportfolio-black w-screen mx-auto text-center font-thin text-sm py-6 mt-4 text-qportfolio-white">
 			<div className="flex flex-row items-center justify-center gap-1">
 				<p className="mb-0 font-medium">{footer.text} &bull;</p>
 				<img
