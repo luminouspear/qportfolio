@@ -16,7 +16,7 @@ import { ExperienceCard } from "./ExperienceCard";
 const Experience = () => {
 	return (
 		<div className={`${styles.paddingX} mx-auto max-w-7xl mt-12`}>
-			<motion.div variants={textVariant()}>
+			<motion.div >
 				<h3 className={styles.darkSectionSubText}>
 					{sectionOverviews[1].subtitle}
 				</h3>

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 import { styles } from "../styles";
 import { getNavLinkStyle } from "../styles";
@@ -15,6 +15,10 @@ const Navbar = () => {
 	const { userInfo, setUserInfo } = useContext(UserContext);
 
 	const username = userInfo?.username;
+
+	const location = useLocation();
+	const isIndex = location.pathname === "/";
+	const { updateLoginStatus } = useContext(UserContext);
 
 	useEffect(() => {
 		fetch("http://localhost:4000/profile", {
@@ -32,7 +36,68 @@ const Navbar = () => {
 			method: "POST",
 		});
 		setUserInfo(null);
+		updateLoginStatus(false);
 	}
+
+	const renderLink = (link) => {
+		if (link.action === "logout") {
+			return (
+				<a
+					className={getNavLinkStyle(active, link.title)}
+					onClick={logout}
+				>
+					{link.title}
+				</a>
+			);
+		}
+		if (isIndex) {
+			if (link.page) {
+				return (
+					<Link
+						to={link.linkTo}
+						onClick={link.action ?? undefined}
+						className={getNavLinkStyle(active, link.title)}
+					>
+						{link.title}
+					</Link>
+				);
+			} else {
+				return (
+					<a
+						href={`#${link.id}`}
+						className={getNavLinkStyle(active, link.title)}
+					>
+						{link.title}
+					</a>
+				);
+			}
+		} else {
+			if (link.page) {
+				return (
+					<Link
+						to={link.linkTo}
+						onClick={link.action ?? undefined}
+						className={getNavLinkStyle(active, link.title)}
+					>
+						{link.title}
+					</Link>
+				);
+			} else {
+				return (
+					<Link
+						to={{
+							pathname: "/",
+							hash: `#${link.id}`,
+						}}
+						onClick={link.action ?? undefined}
+						className={getNavLinkStyle(active, link.title)}
+					>
+						{link.title}
+					</Link>
+				);
+			}
+		}
+	};
 
 	return (
 		<nav
@@ -63,8 +128,42 @@ const Navbar = () => {
 						</span>
 					</p>
 				</Link>
-				<ul className="list-none hidden md:flex flex-row gap-10  font-activo mt-2">
-					{username && (
+				<ul className="list-none hidden md:flex flex-row gap-10 md:gap-6  font-activo mt-2">
+					{navLinks.map((link) => {
+						return (
+							<li
+								key={link.id}
+								className={
+									getNavLinkStyle(active, link.title) +
+									`${
+										link.loginRequired
+											? username
+												? " inline"
+												: " hidden"
+											: " "
+									}`
+								}
+							>
+								{renderLink(link)}
+							</li>
+						);
+					})}
+
+					{/* {navLinks.map((link) => {
+								<li
+									key={link.id}
+									className={getNavLinkStyle(
+										active,
+										link.title
+									)}
+									onClick={() => setActive(link.title)}
+								>
+									<a href={`#${link.id}`}>{link.title}</a>
+								</li>
+
+						})
+					} */}
+					{/* {username && (
 						<>
 							<li className={getNavLinkStyle(active, "New Post")}>
 								<Link to="/newpost">New Post</Link>
@@ -72,13 +171,18 @@ const Navbar = () => {
 						</>
 					)}
 					{navLinks.map((link) => (
+						!link.page ?
 						<li
 							key={link.id}
 							className={getNavLinkStyle(active, link.title)}
 							onClick={() => setActive(link.title)}
 						>
 							<a href={`#${link.id}`}>{link.title}</a>
-						</li>
+							</li>
+							:
+							<li><Link to={link.linkTo}>
+								<a href={`#${link.id}`}>
+								{link.title}</a></Link></li>
 					))}
 					{username && (
 						<>
@@ -86,7 +190,7 @@ const Navbar = () => {
 								<a onClick={logout}>Logout</a>
 							</li>
 						</>
-					)}
+					)} */}
 				</ul>
 				<div className="md:hidden flex flex-1 justify-end items-center">
 					<img

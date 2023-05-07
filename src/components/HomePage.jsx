@@ -10,13 +10,14 @@ import {
 	Footer,
 	BlogList,
 	NewPost,
+	BlogListPage,
 } from "../components";
 
 const HomePage = () => {
 	return (
 		<>
 			<Hero />
-			<BlogList />
+            <BlogList />
 			<About />
 			<Experience />
 			<Tech />

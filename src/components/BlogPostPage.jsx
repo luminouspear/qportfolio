@@ -18,16 +18,15 @@ const BlogPostPage = () => {
 			response.json().then((postInfo) => {
                 setPostInfo(postInfo);
                 setTagArray(postInfo.tags)
-                console.log('postInfo: ', postInfo)
 
 			});
 		});
 	}, []);
 	if (!postInfo) return "";
 
-	return (
+	return (postInfo && (
 		<>
-			<div className="container max-w-7xl mt-24  w-full mx-auto ">
+			<div className="container max-w-7xl mt-24  w-full min-h-screen mx-auto ">
 				<div className="flex flex-col flex-grow ">
 					{postInfo.mainImage && (
 						<img
@@ -50,7 +49,7 @@ const BlogPostPage = () => {
 								"MMM do, yyyy"
 							)}
 						</time>
-						{userInfo.id === postInfo.author._id && (
+						{userInfo && userInfo.id === postInfo.author._id && (
 							<div>
 								<Link
 									className="font-semibold text-secondary-green cursor-pointer ml-2"
@@ -61,7 +60,7 @@ const BlogPostPage = () => {
 							</div>
 						)}
 					</div>
-					<ul className="flex flex-row gap-2 text-qportfolio-white text-xs mb-4 mx-auto">
+					<ul className="flex flex-row gap-2 text-qportfolio-white text-xs mb-4 mx-auto h-fit">
 						{postInfo.tags.map((tag, index) => (
 							<li
 								className="bg-qportfolio-black py-0.5 px-2 rounded-sm"
@@ -72,12 +71,12 @@ const BlogPostPage = () => {
 						))}
 					</ul>
 					<p
-						className="container w-full lg:w-8/12 mx-8 md:mx-auto mt-12 pb-12 text-base lg:px-16 leading-loose first-letter:block first-letter:text-6xl first-letter:align-text-top first-letter:float-left first-letter:mt-1 first-letter:mr-1  "
+						className="container  w-full lg:w-8/12 mx-8 md:mx-auto mt-12 pb-12 text-base lg:px-16 leading-loose first-letter:block first-letter:text-6xl first-letter:align-text-top first-letter:float-left first-letter:mt-1 first-letter:mr-1  "
 						dangerouslySetInnerHTML={{ __html: postInfo.content }}
 					/>
 				</div>
 			</div>
-		</>
+		</>)
 	);
 };
 export default FullPageWrapper(BlogPostPage, "");

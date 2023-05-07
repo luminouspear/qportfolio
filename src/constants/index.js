@@ -45,16 +45,40 @@ import {
 
 export const navLinks = [
 	{
+		id: "newPost",
+		title: "New Post",
+		page: true,
+		linkTo: "/newpost",
+		loginRequired: true,
+	},
+	{
+		id: "blog",
+		title: "Blog",
+		page: true,
+		linkTo: "/blog",
+	},
+	{
 		id: "about",
 		title: "About",
+		linkTo: "/",
 	},
 	{
 		id: "projects",
 		title: "My Projects",
+		linkTo: "/",
 	},
 	{
 		id: "contact",
 		title: "Contact",
+		linkTo: "/",
+	},
+	{
+		id: "logout",
+		title: "Logout",
+		page: true,
+		linkTo: "/logout",
+		loginRequired: true,
+		action: "logout",
 	},
 ];
 
@@ -103,7 +127,11 @@ const sectionOverviews = [
 		text_rights:
 			"All rights reserved. Images used on this site are sourced from external platforms and credited to their respective creators.",
 	},
-
+	{
+		title: "Dan's Blog",
+		subtitle: "A blog about tech, life and learning",
+		body: "A collection of thoughts and articles about UX design, web development, game design and the future of our industry.",
+	},
 ];
 
 const heroGallery = [
@@ -114,7 +142,6 @@ const heroGallery = [
 	},
 	{ image: gallery3, alt: "A desert with gigantic cloud trees." },
 ];
-
 
 const services = [
 	{

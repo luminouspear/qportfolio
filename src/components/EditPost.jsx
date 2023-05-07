@@ -1,8 +1,10 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import { Navigate, useParams } from "react-router-dom";
 import { styles } from "../styles";
 import Editor from "./Editor";
 import { handleTags } from "../utils/text";
+import { useRedirectIfNotLoggedIn } from "../hoc/useRedirectIfNotLoggedIn";
+import { UserContext } from "../UserContext";
 
 const EditPost = () => {
 	const { id } = useParams();
@@ -14,27 +16,35 @@ const EditPost = () => {
 	const [featured, setFeatured] = useState(false);
 	const [publicationDate, setPublicationDate] = useState("");
 	const [username, setUsername] = useState("");
-
 	const [redirect, setRedirect] = useState(false);
+	const { loading, isLoggedIn } = useContext(UserContext);
+
+	useRedirectIfNotLoggedIn();
 
 	useEffect(() => {
 		fetch("http://localhost:4000/post/" + id).then((response) => {
-            response.json().then(async (postInfo) => {
+			response.json().then(async (postInfo) => {
 				setTitle(postInfo.title);
 				setSummary(postInfo.summary);
-				setTags(postInfo.tags.join(', '));
-                setPublicationDate(postInfo.date);
-                // Fetch the main image, create a Blob, and then create a File object
-                const imageResponse = await fetch('http://localhost:4000/'+ postInfo.mainImage);
-                const imageBlob = await imageResponse.blob();
+				setTags(postInfo.tags.join(", "));
+				setPublicationDate(postInfo.date);
+				// Fetch the main image, create a Blob, and then create a File object
+				const imageResponse = await fetch(
+					"http://localhost:4000/" + postInfo.mainImage
+				);
+				const imageBlob = await imageResponse.blob();
 
-                // Extract the file name from the image URL
-                const imageUrl = new URL('http://localhost:4000/uploads/'+postInfo.mainImage);
-                const imageName = imageUrl.pathname.split('/').pop();
+				// Extract the file name from the image URL
+				const imageUrl = new URL(
+					"http://localhost:4000/uploads/" + postInfo.mainImage
+				);
+				const imageName = imageUrl.pathname.split("/").pop();
 
-                const imageFile = new File([imageBlob], imageName, { type: imageBlob.type });
+				const imageFile = new File([imageBlob], imageName, {
+					type: imageBlob.type,
+				});
 
-                setFiles([imageFile]); // Set the File object to the state
+				setFiles([imageFile]); // Set the File object to the state
 
 				setContent(postInfo.content);
 				setFeatured(postInfo.featured);
@@ -45,13 +55,13 @@ const EditPost = () => {
 
 	async function updatePost(e) {
 		e.preventDefault();
-        const data = new FormData();
-        const tagArray = tags.split(",").map((tag) => tag.trim());
+		const data = new FormData();
+		const tagArray = tags.split(",").map((tag) => tag.trim());
 
 		data.set("title", title);
 		data.set("author", username);
-        data.set("summary", summary);
-        data.set("tags", tagArray);
+		data.set("summary", summary);
+		data.set("tags", tagArray);
 		data.set("content", content);
 		data.set("featured", featured);
 		data.set("date", publicationDate);
@@ -116,9 +126,9 @@ const EditPost = () => {
 					onChange={(e) => setFiles(e.target.files)}
 					className="my-2 px-2"
 				/>
-				{files  && (
+				{files && (
 					<img
-						src={'http://localhost:4000/uploads/'+files[0].name}
+						src={"http://localhost:4000/uploads/" + files[0].name}
 						alt="Current image"
 						className="h-16 w-16 object-contain"
 					/>

@@ -6,12 +6,15 @@ const bcrypt = require("bcryptjs");
 const app = express();
 const mongoose = require("mongoose");
 const jwt = require("jsonwebtoken");
+const path = require("path")
 const cookieParser = require("cookie-parser");
 require("dotenv").config();
 const multer = require("multer");
 const fs = require("fs");
 
 const uploadMiddleware = multer({ dest: "uploads/" });
+const isProduction = process.env.NODE_ENV === "production";
+
 
 const salt = bcrypt.genSaltSync(10);
 const secret = process.env.SECRET;
@@ -177,9 +180,23 @@ app.get("/posts", async (req, res) => {
 });
 
 app.get("/post/:id", async (req, res) => {
-	const { id } = req.params;
-	postDoc = await Post.findById(id).populate("author", ["username"]);
-	res.json(postDoc);
+    const { id } = req.params;
+
+    if (!id) { return res.status(400).json({error: "Invalid post ID provided."})}
+    try {
+        postDoc = await Post.findById(id).populate("author", ["username"]);
+    	res.json(postDoc);
+    } catch (err) {
+        res.status(500).json({error: err.message})
+    }
+});
+
+app.get("*", (req, res) => {
+    console.log(path.resolve(__dirname, "..", "public", "index.html"));
+	const indexPath = isProduction
+		? path.resolve(__dirname, "build", "index.html")
+		: path.resolve(__dirname, "..", "public", "index.html");
+	res.sendFile(indexPath);
 });
 
 app.listen(4000);

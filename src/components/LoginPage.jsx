@@ -8,7 +8,7 @@ const LoginPage = () => {
 	const [username, setUsername] = useState("");
 	const [password, setPassword] = useState("");
 	const [redirect, setRedirect] = useState(false);
-	const { setUserInfo } = useContext(UserContext);
+	const { setUserInfo, updateLoginStatus } = useContext(UserContext);
 
 	async function login(e) {
 		e.preventDefault();
@@ -21,6 +21,7 @@ const LoginPage = () => {
 		if (response.ok) {
 			response.json().then((userInfo) => {
 				setUserInfo(userInfo);
+				updateLoginStatus(true);
 				setRedirect(true);
 			});
 		} else {

@@ -6,8 +6,11 @@ import { useState, useContext } from "react";
 import { UserContext } from "../UserContext";
 import Editor from "./Editor";
 import { handleTags } from "../utils/text";
+import { useRedirectIfNotLoggedIn } from "../hoc/useRedirectIfNotLoggedIn";
 
 const NewPost = () => {
+
+
 	const [title, setTitle] = useState("");
 	const [summary, setSummary] = useState("");
 	const [tags, setTags] = useState("");
@@ -18,13 +21,15 @@ const NewPost = () => {
 	const now = new Date();
 	const timezoneOffsetInMs = now.getTimezoneOffset() * 60 * 1000;
 	const currentTimestamp = new Date(now - timezoneOffsetInMs)
-		.toISOString()
-		.slice(0, -8);
+	.toISOString()
+	.slice(0, -8);
 	const [publicationDate, setPublicationDate] = useState("");
 
 	const [redirect, setRedirect] = useState(false);
 
-	const { userInfo } = useContext(UserContext);
+	const { loading, userInfo } = useContext(UserContext);
+
+	useRedirectIfNotLoggedIn();
 
 	const username = userInfo?.username;
 
