@@ -17,6 +17,7 @@ const EditPost = () => {
 	const [publicationDate, setPublicationDate] = useState("");
 	const [username, setUsername] = useState("");
 	const [redirect, setRedirect] = useState(false);
+	const [showConfirmDelete, setShowConfirmDelete] = useState(false);
 	const { loading, isLoggedIn } = useContext(UserContext);
 
 	useRedirectIfNotLoggedIn();
@@ -81,12 +82,54 @@ const EditPost = () => {
 		}
 	}
 
+	async function deletePost() {
+		const response = await fetch("http://localhost:4000/post/" + id, {
+			method: "DELETE",
+			credentials: "include",
+		});
+
+		if (response.status === 200) {
+			setRedirect(true);
+		}
+    }
+
+    function showDelete(e) {
+        e.preventDefault()
+        if (showConfirmDelete) {
+            setShowConfirmDelete(false)
+        } else {
+            setShowConfirmDelete(true)
+        }
+    }
+
 	if (redirect) {
 		return <Navigate to={`/post/${id}`} />;
 	}
 
 	return (
-		<div className="flex justify-start  flex-col items-center mx-auto min-h-screen">
+		<div className="flex justify-start  flex-col items-center mx-auto min-h-screen relative">
+			{showConfirmDelete && <div className="absolute inset-0 bg-black/60 flex items-center justify-center">
+				<div className="w-1/2 h-auto rounded-xl shadow-md bg-qportfolio-white border border-qportfolio-black/50 pt-[5%] pb-[5%] z-[100] px-16">
+					<h2 className={styles.darkSectionHeadText}>
+						Are you sure you want to delete?
+					</h2>
+					<p className="py-4">This action cannot be undone.</p>
+					<div className="flex flex-row gap-2">
+                        <button
+                            className="w-1/2 py-4 rounded-md border border-red-500 text-red-500 font-bold text-xl"
+                            onClick={deletePost}
+                        >
+							Delete
+						</button>
+                        <button
+                            className="w-1/2 py-4 rounded-md border border-secondary-green text-secondary-green font-bold text-xl"
+                            onClick={showDelete}
+                        >
+							Cancel
+						</button>
+					</div>
+				</div>
+			</div>}
 			<form
 				className="mt-24 container flex flex-col max-w-4xl p-4 border border-black/10 rounded-md"
 				onSubmit={updatePost}
@@ -149,9 +192,15 @@ const EditPost = () => {
 					/>
 					<label htmlFor="featuredArticle">Featured article?</label>
 				</div>
-				<button className="py-2 bg-qportfolio-black text-qportfolio-white font-bold text-2xl rounded-md">
-					Save Post
-				</button>
+				<div className="flex flex-row-reverse gap-4 md:flex-col ">
+                    <button className="w-1/2 md:w-full py-2 bg-qportfolio-black text-qportfolio-white font-bold text-2xl rounded-md">
+                        Save Post
+                    </button>
+                                    <button className="w-1/2 md:w-full py-2 bg-[#d00] text-qportfolio-white font-bold  text-2xl rounded-md"
+                                    onClick={showDelete}>
+                        Delete Post
+                    </button>
+                </div>
 			</form>
 		</div>
 	);

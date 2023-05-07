@@ -191,11 +191,39 @@ app.get("/post/:id", async (req, res) => {
     }
 });
 
+app.delete("/post/:id", async (req, res) => {
+    const { id } = req.params;
+
+    if (!id) {
+        return res.status(400).json({error: "Invalid post ID provided."})
+    }
+
+    try {
+        const { token } = req.cookies;
+        jwt.verify(token, secret, {}, async(err, info) => {
+            if (err) throw err;
+
+            const postDoc = await Post.findById(id);
+            const isAuthorSame = JSON.stringify(postDoc.author) === JSON.stringify(info.id)
+
+            if (!isAuthorSame) {
+                return res.status(403).json('You are not the author of this post.')
+            }
+
+            await Post.findByIdAndDelete(id);
+            res.json({message: "Post deleted successfully."})
+
+        })
+    } catch (err) {
+        res.status(500).json({error: err.message })
+    }
+})
+
 app.get("*", (req, res) => {
     console.log(path.resolve(__dirname, "..", "public", "index.html"));
 	const indexPath = isProduction
 		? path.resolve(__dirname, "build", "index.html")
-		: path.resolve(__dirname, "..", "public", "index.html");
+		: path.resolve(__dirname, "..", "index.html");
 	res.sendFile(indexPath);
 });
 
