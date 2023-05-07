@@ -103,6 +103,7 @@ const sectionOverviews = [
 		text_rights:
 			"All rights reserved. Images used on this site are sourced from external platforms and credited to their respective creators.",
 	},
+
 ];
 
 const heroGallery = [
@@ -444,9 +445,10 @@ const blogTestData = [
 		title: "Getting Started with React",
 		author: "Jane Doe",
 		date: "2023-05-01",
+		summary: "",
 		content:
 			"In this blog post, we'll explore the basics of React, a popular JavaScript library for building user interfaces. We'll start by setting up a new React project, then dive into components, props, and state management.",
-		image: "https://picsum.photos/300/200",
+		mainImage: "https://picsum.photos/300/200",
 		tags: ["React", "JavaScript", "Frontend"],
 		featured: false,
 	},
@@ -455,9 +457,10 @@ const blogTestData = [
 		title: "An Introduction to Tailwind CSS",
 		author: "John Smith",
 		date: "2023-05-10",
+		summary: "",
 		content:
 			"Tailwind CSS is a utility-first CSS framework that makes it easy to build custom designs with ease. In this blog post, we'll cover the basics of setting up a Tailwind CSS project and explore some of its powerful features.",
-		image: "https://picsum.photos/300/200",
+		mainImage: "https://picsum.photos/300/200",
 		tags: ["Tailwind CSS", "CSS", "Design"],
 		featured: false,
 	},
@@ -466,9 +469,10 @@ const blogTestData = [
 		title: "How to Boost Your Productivity as a Developer",
 		author: "Alice Brown",
 		date: "2023-02-15",
+		summary: "",
 		content:
 			"Being a developer can be both rewarding and challenging. In this post, we'll explore strategies to boost your productivity...",
-		image: "https://picsum.photos/300/200",
+		mainImage: "https://picsum.photos/300/200",
 		tags: ["Productivity", "Developer", "Tips"],
 		featured: true,
 	},
@@ -477,9 +481,10 @@ const blogTestData = [
 		title: "Demystifying CSS Grid Layout",
 		author: "Bob Johnson",
 		date: "2023-01-30",
+		summary: "",
 		content:
 			"CSS Grid Layout is a powerful tool for creating responsive and flexible layouts. In this post, we'll dive into the basics...",
-		image: "https://picsum.photos/300/200",
+		mainImage: "https://picsum.photos/300/200",
 		tags: ["CSS", "Grid", "Web Development"],
 		featured: false,
 	},

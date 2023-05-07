@@ -9,7 +9,7 @@ import { ProjectCard } from "./ProjectCard";
 const Projects = () => {
 	return (
 		<div
-			className={`md:px-32 xl:px-[13rem] 2xl:px-80 translate-x-6 px-12 mt-6 2xl:-mx-64 py-12 bg-qportfolio-black`}
+			className={`md:px-32 xl:px-[13rem] 2xl:px-80  px-12 mt-6 2xl:-mx-64 py-12 bg-qportfolio-black`}
 		>
 			<span className="hash-span" id="projects">
 				&nbsp;
