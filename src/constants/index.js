@@ -341,7 +341,7 @@ const projects = [
 			},
 		],
 		image: siegecraft,
-		git_source_code_link: "https://github.com/luminouspear/tdsiegecraft",
+		git_source_code_link: "https://github.com/luminouspear/siegecraft-web",
 	},
 	{
 		name: "MakerManager.ca",

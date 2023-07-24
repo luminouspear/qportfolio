@@ -6,7 +6,7 @@ const bcrypt = require("bcryptjs");
 const app = express();
 const mongoose = require("mongoose");
 const jwt = require("jsonwebtoken");
-const path = require("path")
+const path = require("path");
 const cookieParser = require("cookie-parser");
 require("dotenv").config();
 const multer = require("multer");
@@ -15,18 +15,22 @@ const fs = require("fs");
 const uploadMiddleware = multer({ dest: "uploads/" });
 const isProduction = process.env.NODE_ENV === "production";
 
-
 const salt = bcrypt.genSaltSync(10);
 const secret = process.env.SECRET;
 
 const corsOptions = {
-	origin: "http://localhost:5174",
+	origin:
+		process.env.NODE_ENV === "production"
+			? "https://danmccollum.com"
+			: "http://localhost:5174",
 	credentials: true,
 };
 
 app.use(cors(corsOptions));
 app.use(express.json());
 app.use(cookieParser());
+
+app.use(express.static(path.join(__dirname, "build")));
 app.use("/uploads", express.static(__dirname + "/uploads"));
 
 mongoose.connect(process.env.MONGO_URI, {
@@ -103,7 +107,7 @@ app.post(
 			const { title, summary, content, author, date, tags, featured } =
 				req.body;
 
-                const tagArray = tags.split(',').map(tag=>tag.trim());
+			const tagArray = tags.split(",").map((tag) => tag.trim());
 
 			const postDoc = await Post.create({
 				title,
@@ -121,37 +125,36 @@ app.post(
 );
 
 app.put("/post", uploadMiddleware.single("mainImage"), async (req, res) => {
+	let filePath = "";
+	filePath = getFilePathForfile(req, filePath);
 
-    let filePath = ""
-    filePath = getFilePathForfile(req, filePath)
-
-    const { token } = req.cookies;
+	const { token } = req.cookies;
 	jwt.verify(token, secret, {}, async (err, info) => {
-        if (err) throw err;
+		if (err) throw err;
 
-		const { id, title, summary, content, author, date, tags, featured } = req.body
-        const postDoc = await Post.findById(id)
-        const tagArray = tags.split(',').map(tag => tag.trim())
+		const { id, title, summary, content, author, date, tags, featured } =
+			req.body;
+		const postDoc = await Post.findById(id);
+		const tagArray = tags.split(",").map((tag) => tag.trim());
 
-        const isAuthorSame = JSON.stringify(postDoc.author) === JSON.stringify(info.id)
+		const isAuthorSame =
+			JSON.stringify(postDoc.author) === JSON.stringify(info.id);
 
-        if (!isAuthorSame) {
-            return res.status(400).json('You are not the author')
-        }
-        await postDoc.updateOne({
-            title,
-            summary,
-            content,
-            date,
-            tags: tagArray,
-            featured,
-            mainImage: filePath ? filePath : postDoc.mainImage,
-        })
+		if (!isAuthorSame) {
+			return res.status(400).json("You are not the author");
+		}
+		await postDoc.updateOne({
+			title,
+			summary,
+			content,
+			date,
+			tags: tagArray,
+			featured,
+			mainImage: filePath ? filePath : postDoc.mainImage,
+		});
 
-        res.json(postDoc)
-
+		res.json(postDoc);
 	});
-
 });
 
 app.get("/posts", async (req, res) => {
@@ -180,50 +183,55 @@ app.get("/posts", async (req, res) => {
 });
 
 app.get("/post/:id", async (req, res) => {
-    const { id } = req.params;
+	const { id } = req.params;
 
-    if (!id) { return res.status(400).json({error: "Invalid post ID provided."})}
-    try {
-        postDoc = await Post.findById(id).populate("author", ["username"]);
-    	res.json(postDoc);
-    } catch (err) {
-        res.status(500).json({error: err.message})
-    }
+	if (!id) {
+		return res.status(400).json({ error: "Invalid post ID provided." });
+	}
+	try {
+		postDoc = await Post.findById(id).populate("author", ["username"]);
+		res.json(postDoc);
+	} catch (err) {
+		res.status(500).json({ error: err.message });
+	}
 });
 
 app.delete("/post/:id", async (req, res) => {
-    const { id } = req.params;
+	const { id } = req.params;
 
-    if (!id) {
-        return res.status(400).json({error: "Invalid post ID provided."})
-    }
+	if (!id) {
+		return res.status(400).json({ error: "Invalid post ID provided." });
+	}
 
-    try {
-        const { token } = req.cookies;
-        jwt.verify(token, secret, {}, async(err, info) => {
-            if (err) throw err;
+	try {
+		const { token } = req.cookies;
+		jwt.verify(token, secret, {}, async (err, info) => {
+			if (err) throw err;
 
-            const postDoc = await Post.findById(id);
-            const isAuthorSame = JSON.stringify(postDoc.author) === JSON.stringify(info.id)
+			const postDoc = await Post.findById(id);
+			const isAuthorSame =
+				JSON.stringify(postDoc.author) === JSON.stringify(info.id);
 
-            if (!isAuthorSame) {
-                return res.status(403).json('You are not the author of this post.')
-            }
+			if (!isAuthorSame) {
+				return res
+					.status(403)
+					.json("You are not the author of this post.");
+			}
 
-            await Post.findByIdAndDelete(id);
-            res.json({message: "Post deleted successfully."})
-
-        })
-    } catch (err) {
-        res.status(500).json({error: err.message })
-    }
-})
+			await Post.findByIdAndDelete(id);
+			res.json({ message: "Post deleted successfully." });
+		});
+	} catch (err) {
+		res.status(500).json({ error: err.message });
+	}
+});
 
 app.get("*", (req, res) => {
-    console.log(path.resolve(__dirname, "..", "public", "index.html"));
-	const indexPath = isProduction
-		? path.resolve(__dirname, "build", "index.html")
-		: path.resolve(__dirname, "..", "index.html");
+	const indexPath = path.resolve(__dirname, "build", "index.html");
+
+	// const indexPath = isProduction
+	// 	? path.resolve(__dirname, "build", "index.html")
+	// 	: path.resolve(__dirname, "..", "index.html");
 	res.sendFile(indexPath);
 });
 

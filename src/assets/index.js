@@ -35,9 +35,9 @@ import quotient from "./company/quotient.png";
 import appiction from "./company/appiction.png";
 
 
-import siegecraft from "./siegecraft.png";
-import simcoestitchcraft from "./simcoestitchcraft.png";
-import makermanager from "./makermanager.png";
+import siegecraft from "./siegecraft.jpg";
+import simcoestitchcraft from "./simcoestitchcraft.jpg";
+import makermanager from "./makermanager.jpg";
 
 import mdx from "./mdx.jpg";
 import dcl from "./dcl.jpg";
