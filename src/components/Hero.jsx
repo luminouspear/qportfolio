@@ -66,9 +66,9 @@ const Hero = () => {
 	};
 
 	return (
-		<section className="mx-auto mt-24 relative max-w-7xl">
+		<section className="relative mx-auto mt-24 max-w-7xl">
 			<div
-				className={`sm:px-16 px-0 mx-auto flex flex-col-reverse md:flex-row justify-start items-start gap-6`}
+				className={`sm:px-16 px-0 mx-auto flex flex-col-reverse md:flex-row justify-start items-start gap-6 overflow-hidden`}
 			>
 				<div className="z-10 min-w-[50%] pl-4 md:pb-48 md:pt-24  xl:-translate-x-12 2xl:-translate-x-16 bg-qportfolio-white  ">
 					<h1
@@ -163,14 +163,14 @@ const Hero = () => {
 								&nbsp;whatever&apos;s coming next.
 							</p>
 						</div>
-						<div className="ml-4 mt-8 flex flex-row gap-4 ">
+						<div className="flex flex-row gap-4 mt-8 ml-4 ">
 							<a href="#contact">
-								<button className="px-6 py-4 rounded-lg font-bold text-xl bg-primary-green hover:bg-secondary-green text-white">
+								<button className="px-6 py-4 text-xl font-bold text-white rounded-lg bg-primary-green hover:bg-secondary-green">
 									Let&apos;s Talk
 								</button>
 							</a>
 							<a href="#work">
-								<button className="px-6 py-4 rounded-lg text-xl hover:underline font-bold text-primary-green hover:text-secondary-green">
+								<button className="px-6 py-4 text-xl font-bold rounded-lg hover:underline text-primary-green hover:text-secondary-green">
 									Learn More
 								</button>
 							</a>
@@ -178,8 +178,8 @@ const Hero = () => {
 					</div>
 				</div>
 
-				<div className="md:h-auto max-h-1/2 min-w-full overflow-hidden md:rounded-md flex">
-					<div className="md:w-full md:h-full overflow-hidden isolate ">
+				<div className="flex min-w-full overflow-hidden md:h-auto max-h-1/2 md:rounded-md">
+					<div className="overflow-hidden md:w-full md:h-full isolate ">
 						<img
 							ref={imgRef}
 							src={currentImage}

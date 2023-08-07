@@ -31,5 +31,5 @@ export { styles };
 export const getNavLinkStyle = (active, title) => {
 	return `${
 		active === title ? "text-secondary-green " : "text-primary-green "
-	} hover:text-secondary-green text-[16px] font-medium cursor-pointer`;
+	} hover:text-secondary-green text-[16px] font-medium cursor-pointer mx-1`;
 };

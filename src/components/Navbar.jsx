@@ -20,8 +20,12 @@ const Navbar = () => {
 	const isIndex = location.pathname === "/";
 	const { updateLoginStatus } = useContext(UserContext);
 
+	const path = process.env.NODE_ENV === "production"
+			? "https://danmccollum.com"
+			: "http://127.0.0.1:4000"
+
 	useEffect(() => {
-		fetch("http://localhost:4000/profile", {
+		fetch(`${path}/profile`, {
 			credentials: "include",
 		}).then((res) => {
 			res.json().then((userInfo) => {
@@ -31,7 +35,7 @@ const Navbar = () => {
 	}, []);
 
 	function logout() {
-		fetch("http://localhost:4000/logout", {
+		fetch(`${path}/logout`, {
 			credentials: "include",
 			method: "POST",
 		});
@@ -103,7 +107,7 @@ const Navbar = () => {
 		<nav
 			className={`${styles.paddingX}  w-full flex justify-center items-center py-5 fixed top-0 z-20 bg-qportfolio-white`}
 		>
-			<div className="w-full flex justify-between items-center max-w-7xl mx-auto">
+			<div className="flex items-center justify-between w-full mx-auto max-w-7xl">
 				<Link
 					to="/"
 					className="flex items-center gap-2"
@@ -115,20 +119,20 @@ const Navbar = () => {
 					<img
 						src={logo}
 						alt="logo"
-						className="w-9 h-9 object-contain"
+						className="object-contain mr-1 w-9 h-9"
 					/>
 					<p className="text-primary-green text-[16px] font-bold cursor-pointer font-gloock">
 						Dan McCollum{" "}
-						<span className="hidden md:inline-block font-activo text-sm font-thin relative">
+						<span className="relative hidden text-sm font-thin md:inline-block font-activo">
 							<span className="">|</span> Designer,
 							Educator,&nbsp;
-							<span className="after:content-['new'] after:bg-primary-green after:text-qportfolio-white after:px-1.5 after:-py-1 after:text-[0.65rem] after:capitalize after:font-bold after:absolute after:rounded-sm after:-right-6 after:-top-3 after:rotate-6 after:scale-75 after:hover:rotate-3 after:hover:transition-all">
+							<span className="">
 								Developer
 							</span>
 						</span>
 					</p>
 				</Link>
-				<ul className="list-none hidden md:flex flex-row gap-10 md:gap-6  font-activo mt-2">
+				<ul className="flex-row hidden gap-10 mt-2 list-none md:flex md:gap-6 font-activo">
 					{navLinks.map((link) => {
 						return (
 							<li
@@ -149,50 +153,8 @@ const Navbar = () => {
 						);
 					})}
 
-					{/* {navLinks.map((link) => {
-								<li
-									key={link.id}
-									className={getNavLinkStyle(
-										active,
-										link.title
-									)}
-									onClick={() => setActive(link.title)}
-								>
-									<a href={`#${link.id}`}>{link.title}</a>
-								</li>
-
-						})
-					} */}
-					{/* {username && (
-						<>
-							<li className={getNavLinkStyle(active, "New Post")}>
-								<Link to="/newpost">New Post</Link>
-							</li>
-						</>
-					)}
-					{navLinks.map((link) => (
-						!link.page ?
-						<li
-							key={link.id}
-							className={getNavLinkStyle(active, link.title)}
-							onClick={() => setActive(link.title)}
-						>
-							<a href={`#${link.id}`}>{link.title}</a>
-							</li>
-							:
-							<li><Link to={link.linkTo}>
-								<a href={`#${link.id}`}>
-								{link.title}</a></Link></li>
-					))}
-					{username && (
-						<>
-							<li className={getNavLinkStyle(active, "Logout")}>
-								<a onClick={logout}>Logout</a>
-							</li>
-						</>
-					)} */}
 				</ul>
-				<div className="md:hidden flex flex-1 justify-end items-center">
+				<div className="flex items-center justify-end flex-1 md:hidden">
 					<img
 						src={toggle ? close : menu}
 						alt="menu"
@@ -204,7 +166,7 @@ const Navbar = () => {
 							toggle ? "flex" : "hidden"
 						} p-6 black-gradient absolute top-20 right-0 mx-4 my-2 min-w-[140px] z-30 rounded-xl text-white font-activo`}
 					>
-						<ul className="list-none flex justify-end flex-col gap-4 ">
+						<ul className="flex flex-col justify-end gap-4 list-none ">
 							{navLinks.map((link) => (
 								<li
 									key={link.id}

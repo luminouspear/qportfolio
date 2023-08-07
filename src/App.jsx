@@ -46,13 +46,13 @@ const App = () => {
 	return (
 		<UserContextProvider>
 			<BrowserRouter>
-				<div className=" z-0 bg-qportfolio-white">
+				<div className="z-0  bg-qportfolio-white">
 					{debugWindowSize && showTailwindDebug(debugWindowSize)}
 					<Navbar />
 					<Routes>
 						<Route index element={<HomePage />} />
 						<Route path={"/login"} element={<LoginPage />} />
-						{/* <Route path={"/register"} element={<RegisterPage />} /> */}
+						<Route path={"/register"} element={<RegisterPage />} />
 						<Route path={"/newpost"} element={<NewPost />} />
 						<Route path={"/post/:id"} element={<BlogPostPage />} />
 						<Route path={"/blog"} element={<BlogListPage />} />

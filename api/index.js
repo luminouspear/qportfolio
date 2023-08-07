@@ -20,9 +20,9 @@ const secret = process.env.SECRET;
 
 const corsOptions = {
 	origin:
-		process.env.NODE_ENV === "production"
+		process.env.NODE_ENV.toLowerCase() === "production"
 			? "https://danmccollum.com"
-			: "http://localhost:5174",
+			: "http://127.0.0.1:5173",
 	credentials: true,
 };
 

@@ -16,7 +16,10 @@ export const ProjectCard = ({
 	location,
 }) => {
 	return (
-		<motion.div variants={fadeIn("up", "spring", index * 0.25, 0.75)}>
+		<motion.div
+			variants={fadeIn("up", "spring", index * 0.25, 0.75)}
+			className="lg:col-span-4 "
+		>
 			<Tilt
 				options={{
 					max: 6,
@@ -24,14 +27,14 @@ export const ProjectCard = ({
 					speed: 125,
 					reverse: true,
 				}}
-				className="bg-qportfolio-sage p-5 rounded-md md:w-auto md:flex-wrap lg:flex-nowrap lg:w-72 xl:w-80 2xl:w-96 w-full"
+				className="w-full p-5 rounded-md bg-qportfolio-sage md:w-auto md:flex-wrap lg:flex-nowrap "
 			>
 				<div className="relative w-full lg:h-48 h-72">
 					<img
 						src={image}
 						loading="lazy"
 						alt={name}
-						className="w-full h-full object-cover rounded-md"
+						className="object-cover w-full h-full rounded-md"
 					/>
 					<div className="absolute inset-0 flex justify-end m-4 card-img_hover">
 						{githubLink && (
@@ -39,12 +42,12 @@ export const ProjectCard = ({
 								onClick={() => {
 									window.open(git_source_code_link, "_blank");
 								}}
-								className="black-gradient w-10 h-10 rounded-full flex justify-center items-center cursor-pointer"
+								className="flex items-center justify-center w-10 h-10 rounded-full cursor-pointer black-gradient"
 							>
 								<img
 									src={github}
 									alt={`Github link for ${name} project.`}
-									className="w-1/2 h-1/2 object-contain"
+									className="object-contain w-1/2 h-1/2"
 								/>
 							</div>
 						)}
@@ -53,23 +56,23 @@ export const ProjectCard = ({
 								onClick={() => {
 									window.open(url_location, "_blank");
 								}}
-								className="black-gradient w-10 h-10 rounded-full flex justify-center items-center cursor-pointer"
+								className="flex items-center justify-center w-10 h-10 rounded-full cursor-pointer black-gradient"
 							>
 								<img
 									src={location}
 									alt={`Github link for ${name} project.`}
-									className="w-1/2 h-1/2 object-contain"
+									className="object-contain w-1/2 h-1/2"
 								/>
 							</div>
 						)}
 					</div>
 				</div>
 				<div className="mt-6">
-					<h3 className="font-bold text-2xl mb-4">{name}</h3>
+					<h3 className="mb-4 text-2xl font-bold">{name}</h3>
 					{dates && <h3>{dates}</h3>}
 					<p>{description}</p>
 				</div>
-				<div className="mt-2 flex flex-wrap gap-1 font-bold text-xs">
+				<div className="flex flex-wrap gap-1 mt-2 text-xs font-bold">
 					{tags.map((tag, index) => (
 						<p
 							key={tag.name}

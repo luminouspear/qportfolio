@@ -320,11 +320,11 @@ const projects = [
 	{
 		name: "Third Dawn: Siegecraft",
 		description:
-			"A hybrid card/board game with over 220 unique illustrated cards made with Stable Diffusion. Built for competitive play, you can explore the powers of the elements of Earth, Air, Fire, Water, Light and Shadow. Co-created with designer Ben Doeckel. Website coming soon!",
+			"A hybrid card/board game with over 220 unique illustrated cards made with Stable Diffusion. Built for competitive play, you can explore the powers of the elements of Earth, Air, Fire, Water, Light and Shadow. Co-created with designer Ben Doeckel.",
 		githubLink: true,
 		tags: [
 			{
-				name: "eleventy",
+				name: "react",
 				color: "blue-text-gradient",
 			},
 			{
@@ -341,7 +341,10 @@ const projects = [
 			},
 		],
 		image: siegecraft,
+		location: www,
+
 		git_source_code_link: "https://github.com/luminouspear/siegecraft-web",
+		url_location: "https://siegecraftgame.com",
 	},
 	{
 		name: "MakerManager.ca",

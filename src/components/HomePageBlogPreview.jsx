@@ -9,8 +9,13 @@ export default function BlogList() {
 
 	const [posts, setPosts] = useState([]);
 
+		const path =
+			process.env.NODE_ENV === "production"
+				? "https://danmccollum.com"
+				: "http://127.0.0.1:4000";
+
 	useEffect(() => {
-		fetch("http://localhost:4000/posts?limit=3").then((response) => {
+		fetch(`${path}/posts?limit=3`).then((response) => {
 			response.json().then((posts) => {
 				setPosts(posts);
 			});
@@ -32,7 +37,7 @@ export default function BlogList() {
 						<BlogPreview key={blog._id + blog.title} {...blog} />
 					))}
 				<Link to={"/blog"} className="flex justify-center">
-					<button className="font-bold py-4 px-16 border border-secondary-green rounded-lg text-secondary-green hover:border-primary-green  text-xl hover:text-primary-green cursor-pointer">
+					<button className="px-16 py-4 text-xl font-bold border rounded-lg cursor-pointer border-secondary-green text-secondary-green hover:border-primary-green hover:text-primary-green">
 						View Blog
 					</button>
 				</Link>

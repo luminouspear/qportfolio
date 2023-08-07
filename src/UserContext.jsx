@@ -7,8 +7,13 @@ export function UserContextProvider({ children }) {
 	const [isLoggedIn, setIsLoggedIn] = useState(false);
 	const [loading, setLoading] = useState(true);
 
+		const path =
+			process.env.NODE_ENV === "production"
+				? "https://danmccollum.com"
+				: "http://127.0.0.1:4000";
+
 	useEffect(() => {
-		fetch("http://localhost:4000/profile", {
+		fetch(`${path}/profile`, {
 			credentials: "include",
 		})
 			.then((response) => {

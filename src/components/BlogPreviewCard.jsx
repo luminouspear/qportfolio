@@ -3,18 +3,23 @@ import { Link } from "react-router-dom";
 
 export const BlogPreview = ( { _id, title, author, date, summary, mainImage, tags, createdAt }) => {
 
+		const path =
+			process.env.NODE_ENV === "production"
+				? "https://danmccollum.com"
+				: "http://127.0.0.1:4000";
+
 	function setLink(element) {
 		return <Link to={`/post/${_id}`}>{element}</Link>;
 	}
 
 	return (author &&
 		<>
-			<article className=" flex flex-col lg:flex-row w-full lg:w-3/4 justify-start mt-8 mb-12 mx-auto group">
+			<article className="flex flex-col justify-start w-full mx-auto mt-8 mb-12 lg:flex-row lg:w-3/4 group">
 				{mainImage &&
 					setLink(
 						<img
-							src={"http://localhost:4000/" + mainImage}
-							className="rounded-lg object-cover cursor-pointer w-64 h-auto"
+							src={`${path}/` + mainImage}
+							className="object-cover w-64 h-auto rounded-lg cursor-pointer"
 						/>
 					)}
 				<div
@@ -29,7 +34,7 @@ export const BlogPreview = ( { _id, title, author, date, summary, mainImage, tag
 							{title}
 						</h3>
 					)}
-					<div className="flex flex-row text-xs text-qportfolio-black/90 mb-2 ">
+					<div className="flex flex-row mb-2 text-xs text-qportfolio-black/90 ">
 						<p className="after:content-['@'] after:m-0.5">
 							{author.username}
 						</p>
@@ -37,7 +42,7 @@ export const BlogPreview = ( { _id, title, author, date, summary, mainImage, tag
 							{format(new Date(createdAt), "MMM do, yyyy")}
 						</p>
 					</div>
-					<ul className="flex flex-row gap-2 text-qportfolio-white text-xs mb-4">
+					<ul className="flex flex-row gap-2 mb-4 text-xs text-qportfolio-white">
 						{tags.map((tag, index) => (
 							<li
 								className="bg-qportfolio-black py-0.5 px-2 rounded-sm h-fit"
@@ -49,7 +54,7 @@ export const BlogPreview = ( { _id, title, author, date, summary, mainImage, tag
 					</ul>
 					<p className="w-full text-base">{summary}</p>
 					{setLink(
-						<button className="w-full text-right font-bold text-primary-green hover:text-secondary-green cursor-pointer hover:underline">
+						<button className="w-full font-bold text-right cursor-pointer text-primary-green hover:text-secondary-green hover:underline">
 							Read More »
 						</button>
 					)}

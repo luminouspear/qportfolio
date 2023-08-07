@@ -29,3 +29,6 @@ uploads
 #secrets
 *.env
 *./api/.env
+
+#graphics
+*.sketch

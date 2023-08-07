@@ -61,8 +61,8 @@ const Contact = () => {
 	};
 
 	return (
-		<div className="max-w-7xl w-full lg:h-[850px] xl:h-[800px] 2xl:h-[900px] ">
-			<div className="lg:mt-36 2xl:mt-0 mt-0 flex  flex-col-reverse lg:flex-row gap-10 justify-center items-center ml-12 lg:ml-0 relative   lg:min-h-fit">
+		<div className="max-w-7xl w-full lg:h-[850px] xl:h-[800px] 2xl:h-[900px] overflow-hidden">
+			<div className="relative flex flex-col-reverse items-center justify-center gap-10 mt-0 ml-12 lg:mt-36 2xl:mt-0 lg:flex-row lg:ml-0 lg:min-h-fit">
 				<motion.div
 					variants={slideIn("right", "tween", 0.2, 0.5)}
 					className=" lg:w-3/4 w-full lg:ml-[25%] lg:pr-8 lg:pt-[10%] rounded-lg"
@@ -70,12 +70,12 @@ const Contact = () => {
 					<img
 						src={sectionOverviews[5].image}
 						alt="Contact Dan"
-						className=" h-full w-full object-contain rounded-lg"
+						className="object-contain w-full h-full rounded-lg "
 					/>
 				</motion.div>
 				<motion.div
 					variants={slideIn("left", "tween", 0.2, 0.5)}
-					className="lg:w-1/2 w-full bg-primary-green p-8 rounded-lg lg:absolute lg:left-8 lg:h-fit 2xl:top-16"
+					className="w-full p-8 rounded-lg lg:w-1/2 bg-primary-green lg:absolute lg:left-8 lg:h-fit 2xl:top-16"
 				>
 					<p className={styles.sectionSubText}>
 						{sectionOverviews[5].subtitle}
@@ -86,15 +86,15 @@ const Contact = () => {
 					<form
 						ref={formRef}
 						onSubmit={handleSubmit}
-						className="mt-12 flex flex-col gap-8"
+						className="flex flex-col gap-8 mt-12"
 					>
 						<label className="flex flex-col">
-							<span className="text-qportfolio-white font-medium mb-4">
+							<span className="mb-4 font-medium text-qportfolio-white">
 								Your Name
 							</span>
 							<input
 								type="text"
-								className="bg-qportfolio-white py-4 px-6 placeholder:text-qportfolio-black/60 rounded-lg outline-none border-none font-medium"
+								className="px-6 py-4 font-medium border-none rounded-lg outline-none bg-qportfolio-white placeholder:text-qportfolio-black/60"
 								name="name"
 								placeholder="What's your name?"
 								value={form.name}
@@ -102,12 +102,12 @@ const Contact = () => {
 							/>
 						</label>
 						<label className="flex flex-col">
-							<span className="text-qportfolio-white font-medium mb-4">
+							<span className="mb-4 font-medium text-qportfolio-white">
 								Your Email
 							</span>
 							<input
 								type="email"
-								className="bg-qportfolio-white py-4 px-6 placeholder:text-qportfolio-black/60 rounded-lg outline-none border-none font-medium"
+								className="px-6 py-4 font-medium border-none rounded-lg outline-none bg-qportfolio-white placeholder:text-qportfolio-black/60"
 								name="email"
 								placeholder="What's your email address?"
 								value={form.email}
@@ -115,12 +115,12 @@ const Contact = () => {
 							/>
 						</label>
 						<label className="flex flex-col">
-							<span className="text-qportfolio-white font-medium mb-4">
+							<span className="mb-4 font-medium text-qportfolio-white">
 								Your Message
 							</span>
 							<textarea
 								rows="7"
-								className="bg-qportfolio-white py-4 px-6 placeholder:text-qportfolio-black/60 rounded-lg outline-none border-none font-medium"
+								className="px-6 py-4 font-medium border-none rounded-lg outline-none bg-qportfolio-white placeholder:text-qportfolio-black/60"
 								name="message"
 								placeholder="How can I help you today?"
 								value={form.message}
@@ -128,14 +128,14 @@ const Contact = () => {
 							/>
 						</label>
 						{formSubmitted ? (
-							<p className="text-qportfolio-white font-bold text-2xl">
+							<p className="text-2xl font-bold text-qportfolio-white">
 								Thanks for your email! I'll get back to you
 								soon!
 							</p>
 						) : (
 							<button
 								type="submit"
-								className="bg-secondary-green py-4 px-6 rounded-lg text-qportfolio-black font-bold text-2xl"
+								className="px-6 py-4 text-2xl font-bold rounded-lg bg-secondary-green text-qportfolio-black"
 							>
 								{loading ? "Sending..." : "Submit"}
 							</button>
