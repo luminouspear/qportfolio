@@ -11,10 +11,15 @@ const BlogPostPage = () => {
 	const [postInfo, setPostInfo] = useState(null);
     const { id } = useParams();
     const { userInfo } = useContext(UserContext)
-    const [tagArray, setTagArray] = useState([])
+	const [tagArray, setTagArray] = useState([])
+
+	const path =
+		process.env.NODE_ENV === "production"
+			? "https://danmccollum.com"
+			: "http://127.0.0.1:4000";
 
 	useEffect(() => {
-		fetch(`http://localhost:4000/post/${id}`).then((response) => {
+		fetch(`${path}/post/${id}`).then((response) => {
 			response.json().then((postInfo) => {
                 setPostInfo(postInfo);
                 setTagArray(postInfo.tags)
@@ -26,7 +31,7 @@ const BlogPostPage = () => {
 
 	return (postInfo && (
 		<>
-			<div className="container max-w-7xl mt-24  w-full min-h-screen mx-auto ">
+			<div className="container w-full min-h-screen mx-auto mt-24 max-w-7xl ">
 				<div className="flex flex-col flex-grow ">
 					{postInfo.mainImage && (
 						<img
@@ -39,7 +44,7 @@ const BlogPostPage = () => {
 					>
 						{postInfo.title}
 					</h1>
-					<div className="flex flex-row text-xs text-qportfolio-black/90 mb-2 mx-auto">
+					<div className="flex flex-row mx-auto mb-2 text-xs text-qportfolio-black/90">
 						<p className="after:content-['@'] after:m-0.5">
 							{postInfo.author.username}
 						</p>
@@ -52,7 +57,7 @@ const BlogPostPage = () => {
 						{userInfo && userInfo.id === postInfo.author._id && (
 							<div>
 								<Link
-									className="font-semibold text-secondary-green cursor-pointer ml-2"
+									className="ml-2 font-semibold cursor-pointer text-secondary-green"
 									to={`/edit/${postInfo._id}`}
 								>
 									Edit
@@ -60,7 +65,7 @@ const BlogPostPage = () => {
 							</div>
 						)}
 					</div>
-					<ul className="flex flex-row gap-2 text-qportfolio-white text-xs mb-4 mx-auto h-fit">
+					<ul className="flex flex-row gap-2 mx-auto mb-4 text-xs text-qportfolio-white h-fit">
 						{postInfo.tags.map((tag, index) => (
 							<li
 								className="bg-qportfolio-black py-0.5 px-2 rounded-sm"
@@ -71,7 +76,7 @@ const BlogPostPage = () => {
 						))}
 					</ul>
 					<p
-						className="container  w-full lg:w-8/12 mx-8 md:mx-auto mt-12 pb-12 text-base lg:px-16 leading-loose first-letter:block first-letter:text-6xl first-letter:align-text-top first-letter:float-left first-letter:mt-1 first-letter:mr-1  "
+						className="container w-full pb-12 mx-8 mt-12 text-base leading-loose lg:w-8/12 md:mx-auto lg:px-16 first-letter:block first-letter:text-6xl first-letter:align-text-top first-letter:float-left first-letter:mt-1 first-letter:mr-1 "
 						dangerouslySetInnerHTML={{ __html: postInfo.content }}
 					/>
 				</div>
