@@ -66,16 +66,16 @@ const Hero = () => {
 	};
 
 	return (
-		<section className="relative mx-auto mt-24 max-w-7xl">
+		<section className="relative w-full mx-auto mt-24">
 			<div
-				className={`sm:px-16 px-0 mx-auto flex flex-col-reverse md:flex-row justify-start items-start gap-6 overflow-hidden`}
+				className={` px-0 lg:px-16 mx-auto grid grid-flow-row grid-rows-2 grid-cols-12 md:grid-rows-1 md:grid-flow-row justify-start items-start gap-6 overflow-hidden w-full `}
 			>
-				<div className="z-10 min-w-[50%] pl-4 md:pb-48 md:pt-24  xl:-translate-x-12 2xl:-translate-x-16 bg-qportfolio-white  ">
+				<div className="z-10 w-11/12 h-full col-span-12 col-start-1 row-start-2 md:row-start-1 md:col-start-1 xl:col-start-2 md:col-span-6 md:pt-24 bg-qportfolio-white">
 					<h1
 						className={`${styles.heroHeadText} text-qportfolio-black ml-4`}
 					>
 						Hi, I'm{" "}
-						<span className="text-primary-green font-gloock">
+						<span className="leading-2 text-primary-green font-gloock">
 							Dan <br className="" />
 							McCollum
 						</span>
@@ -83,8 +83,8 @@ const Hero = () => {
 					<div
 						className={`${styles.heroSubText} md:mt-2 text-qportfolio-black leading-[2.75rem]`}
 					>
-						<div className="flex gap-2 ml-4">
-							<p>
+						<div className="flex gap-2 ml-4 ">
+							<p className="mr-1 ">
 								<span
 									className={`${
 										activeUnderline === "build"
@@ -178,15 +178,14 @@ const Hero = () => {
 					</div>
 				</div>
 
-				<div className="flex min-w-full overflow-hidden md:h-auto max-h-1/2 md:rounded-md">
-					<div className="overflow-hidden md:w-full md:h-full isolate ">
-						<img
+				<div className="flex  min-w-full col-span-12 col-start-1 row-start-1 lg:ml-10 overflow-hidden lg:row-start-1 lg:col-span-7 lg:col-start-6 md:h-auto max-h-1/2 md:rounded-m h-[60vh] lg:h-full">
+					<img
 							ref={imgRef}
 							src={currentImage}
 							alt={currentImageAlt}
-							className="md:h-[682px] h-[660px] md:w-[1024]  object-cover  md:rounded-md "
+							className="object-cover w-full md:rounded-md"
 						/>
-					</div>
+
 					<div className="hidden md:inline md:bg-gradient-to-l md:from-transparent md:from-[39%] md:via-[#f5f2ed] via-[48%] md:to-[#f5f2ed] md:absolute md:inset-0">
 						&nbsp;
 					</div>

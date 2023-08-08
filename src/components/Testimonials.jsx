@@ -8,7 +8,7 @@ import { FeedbackCard } from "./FeedbackCard";
 
 const Testimonials = () => {
 	return (
-		<div className="md:px-32 xl:px-[13rem] 2xl:px-[22rem] px-12  py-12   bg-primary-green ">
+		<div className="md:px-32 xl:px-[13rem] 2xl:px-[22rem] px-12  py-12   bg-primary-green w-full">
 			<span className="hash-span" id="testimonials">
 				&nbsp;
 			</span>
@@ -21,7 +21,7 @@ const Testimonials = () => {
 				</h2>
 			</motion.div>
 			<div
-				className={`mt-12 pb-14 flex flex-col flex-wrap gap-6 text-qportfolio-white`}
+				className={`mt-12 pb-14 flex flex-col flex-wrap space-y-6 text-qportfolio-white`}
 			>
 				{testimonials.map((testimonial, index) => (
 					<FeedbackCard

@@ -4,11 +4,12 @@ export const ExperienceCard = ({ experience }) => {
 	return (
 		<VerticalTimelineElement
 			contentStyle={{ background: "#122111", color: "#122111" }}
+			className=""
 			contentArrowStyle={{ borderRight: "7px solid #122111" }}
 			date={experience.date}
 			iconStyle={{ background: experience.iconBg }}
 			icon={
-				<div className="flex justify-center items-center w-full h-full">
+				<div className="flex items-center justify-center w-full h-full ">
 					<img
 						src={experience.icon}
 						alt={experience.company_name}
@@ -17,19 +18,19 @@ export const ExperienceCard = ({ experience }) => {
 				</div>
 			}
 		>
-			<div>
-				<h3 className="text-qportfolio-white font-gloock text-2xl  -mb-2">
+			<div className="">
+				<h3 className="-mb-2 text-2xl text-qportfolio-white font-gloock">
 					{experience.title}
 				</h3>
-				<p className="text-qportfolio-white font-semibold m-0 text-sm">
+				<p className="m-0 text-sm font-semibold text-qportfolio-white">
 					{experience.company_name}
 				</p>
 			</div>
-			<ul className="mt-5 list-disc ml-5 space-y-2">
+			<ul className="mt-5 ml-5 space-y-2 list-disc">
 				{experience.points.map((point, index) => (
 					<li
 						key={`experience-point-${index}`}
-						className="text-qportfolio-white text-sm pl-1 tracking-wider"
+						className="pl-1 tracking-wider text-md text-qportfolio-white"
 					>
 						{point}
 					</li>

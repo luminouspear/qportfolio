@@ -17,10 +17,11 @@ const isProduction = process.env.NODE_ENV === "production";
 
 const salt = bcrypt.genSaltSync(10);
 const secret = process.env.SECRET;
+const port = process.env.PORT || 4000;
 
 const corsOptions = {
 	origin:
-		process.env.NODE_ENV.toLowerCase() === "production"
+		process.env.NODE_ENV === "production"
 			? "https://danmccollum.com"
 			: "http://127.0.0.1:5173",
 	credentials: true,
@@ -33,10 +34,13 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "build")));
 app.use("/uploads", express.static(__dirname + "/uploads"));
 
-mongoose.connect(process.env.MONGO_URI, {
-	useNewUrlParser: true,
-	useUnifiedTopology: true,
-});
+mongoose
+	.connect(process.env.MONGO_URI, {
+		useNewUrlParser: true,
+		useUnifiedTopology: true,
+	})
+	.then(() => console.log("Database connected successfully"))
+	.catch((err) => console.error("Database connection error:", err));
 
 app.post("/register", async (req, res) => {
 	const { username, password } = req.body;
@@ -235,7 +239,7 @@ app.get("*", (req, res) => {
 	res.sendFile(indexPath);
 });
 
-app.listen(4000);
+app.listen(port);
 function getFilePathForfile(req, filePath) {
 	if (req.file) {
 		const { originalname, path } = req.file;

@@ -10,7 +10,7 @@ import { ServiceCard } from "./ServiceCard";
 
 const About = () => {
 	return (
-		<div className={`sm:px-16 px-6 mx-auto max-w-7xl mt-12`}>
+		<section className={` mx-auto max-w-7xl mt-12 flex flex-col justify-center `}>
 			<motion.div variants={textVariant()}>
 				<p className={styles.darkSectionSubText}>
 					{sectionOverviews[0].subtitle}
@@ -20,19 +20,19 @@ const About = () => {
 				</h2>
 			</motion.div>
 
-			<motion.p variants={fadeIn("", "", 0.1, 1)} className="w-8/12">
+			<motion.p variants={fadeIn("", "", 0.1, 1)} className="w-full text-xl md:w-8/12 ">
 				{sectionOverviews[0].body}
 			</motion.p>
 
-			<div className="flex flex-col-reverse md:flex-row-reverse w-full mt-8">
-				<div className="mt-4 md:mt-0">
+			<div className="flex flex-col-reverse w-full mt-8 md:flex-row-reverse">
+				<div className="mt-4 md:mt-0 md:px-8">
 					<img
 						src={sectionOverviews[0].image}
 						alt="Dan at the Louisiana Museum"
-						className="h-full w-full object-cover rounded-lg"
+						className="object-cover w-full h-full rounded-lg"
 					/>
 				</div>
-				<div className=" flex flex-wrap gap-4 ">
+				<div className="grid w-full grid-flow-row gap-4 md:grid-flow-col md:grid-cols-2 md:grid-rows-2 ">
 					{services.map((service, index) => (
 						<ServiceCard
 							key={service.title}
@@ -42,7 +42,7 @@ const About = () => {
 					))}
 				</div>
 			</div>
-		</div>
+		</section>
 	);
 };
 

@@ -9,7 +9,7 @@ import { ProjectCard } from "./ProjectCard";
 const Projects = () => {
 	return (
 		<div
-			className={`md:px-32 xl:px-[13rem] 2xl:px-80  px-12 mt-6 2xl:-mx-64 py-12 bg-qportfolio-black overflow-hidden`}
+			className={`md:px-32 xl:px-[13rem] 2xl:px-80  px-12 mt-6 w-full py-12 bg-qportfolio-black overflow-hidden`}
 		>
 			<span className="hash-span" id="projects">
 				&nbsp;
@@ -34,7 +34,7 @@ const Projects = () => {
 				<h3 className="my-8 text-2xl font-bold text-qportfolio-white">
 					Recent Design & Development Work
 				</h3>
-				<div className="grid grid-flow-col gap-6 mt-8 lg:grid-cols-12 lg:gap-4 md:grid-flow-row">
+				<div className="grid grid-flow-row gap-6 mt-8 lg:grid-flow-col lg:grid-cols-12 lg:gap-4">
 					{projects.map((project, index) => (
 						<ProjectCard
 							key={`project-${index}`}
@@ -50,7 +50,7 @@ const Projects = () => {
 					A small collection of some projects I'm really proud of
 					leading.
 				</p>
-				<div className="grid grid-flow-col gap-6 mt-8 lg:grid-cols-12 lg:gap-4 md:grid-flow-row">
+				<div className="grid grid-flow-row gap-6 mt-8 lg:grid-flow-col lg:grid-cols-12 lg:gap-4">
 					{legacyProjects.map((project, index) => (
 						<ProjectCard
 							key={`project-${index}`}

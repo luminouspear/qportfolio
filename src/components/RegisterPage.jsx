@@ -24,6 +24,7 @@ const RegisterPage = () => {
 				alert("Registration successful.");
 				setRedirect(true);
 			} else {
+				console.error(e)
 				alert("Registration failed.");
 			}
 			console.log(response);

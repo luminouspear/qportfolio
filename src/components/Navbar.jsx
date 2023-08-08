@@ -12,13 +12,13 @@ const Navbar = () => {
 	const [active, setActive] = useState("");
 	const [toggle, setToggle] = useState(false);
 
-	const { userInfo, setUserInfo } = useContext(UserContext);
+	const { userInfo, setUserInfo, updateLoginStatus, isLoggedIn } =
+		useContext(UserContext);
 
 	const username = userInfo?.username;
 
 	const location = useLocation();
 	const isIndex = location.pathname === "/";
-	const { updateLoginStatus } = useContext(UserContext);
 
 	const path = process.env.NODE_ENV === "production"
 			? "https://danmccollum.com"

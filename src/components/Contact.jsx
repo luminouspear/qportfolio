@@ -61,21 +61,20 @@ const Contact = () => {
 	};
 
 	return (
-		<div className="max-w-7xl w-full lg:h-[850px] xl:h-[800px] 2xl:h-[900px] overflow-hidden">
-			<div className="relative flex flex-col-reverse items-center justify-center gap-10 mt-0 ml-12 lg:mt-36 2xl:mt-0 lg:flex-row lg:ml-0 lg:min-h-fit">
-				<motion.div
-					variants={slideIn("right", "tween", 0.2, 0.5)}
-					className=" lg:w-3/4 w-full lg:ml-[25%] lg:pr-8 lg:pt-[10%] rounded-lg"
+		<section className="w-full max-w-7xl ">
+			<div className="grid grid-flow-row grid-rows-3 gap-10 lg:ml-0 lg:grid-flow-col lg:grid-rows-3 lg:grid-cols-8 ">
+				<div
+
+					className="w-full h-auto row-span-1 row-start-1 rounded-lg lg:row-start-1 lg:col-start-4 lg:col-span-6 lg:row-span-full lg:mt-36"
 				>
 					<img
 						src={sectionOverviews[5].image}
 						alt="Contact Dan"
-						className="object-contain w-full h-full rounded-lg "
+						className="object-contain w-full h-auto rounded-lg "
 					/>
-				</motion.div>
-				<motion.div
-					variants={slideIn("left", "tween", 0.2, 0.5)}
-					className="w-full p-8 rounded-lg lg:w-1/2 bg-primary-green lg:absolute lg:left-8 lg:h-fit 2xl:top-16"
+				</div>
+				<div
+					className="w-full row-span-2 row-start-2 p-8 rounded-lg bg-primary-green lg:col-start-1 lg:col-span-5 lg:row-start-1 lg:row-span-full"
 				>
 					<p className={styles.sectionSubText}>
 						{sectionOverviews[5].subtitle}
@@ -102,7 +101,7 @@ const Contact = () => {
 							/>
 						</label>
 						<label className="flex flex-col">
-							<span className="mb-4 font-medium text-qportfolio-white">
+							<span className="mt-6 mb-4 font-medium text-qportfolio-white">
 								Your Email
 							</span>
 							<input
@@ -115,7 +114,7 @@ const Contact = () => {
 							/>
 						</label>
 						<label className="flex flex-col">
-							<span className="mb-4 font-medium text-qportfolio-white">
+							<span className="mt-6 mb-4 font-medium text-qportfolio-white">
 								Your Message
 							</span>
 							<textarea
@@ -135,15 +134,15 @@ const Contact = () => {
 						) : (
 							<button
 								type="submit"
-								className="px-6 py-4 text-2xl font-bold rounded-lg bg-secondary-green text-qportfolio-black"
+								className="px-6 py-4 mt-4 text-2xl font-bold rounded-lg bg-secondary-green text-qportfolio-black"
 							>
 								{loading ? "Sending..." : "Submit"}
 							</button>
 						)}
 					</form>
-				</motion.div>
+				</div>
 			</div>
-		</div>
+		</section>
 	);
 };
 

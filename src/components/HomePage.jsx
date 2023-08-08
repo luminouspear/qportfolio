@@ -1,3 +1,4 @@
+import { useContext } from "react";
 import {
 	About,
 	Contact,
@@ -12,12 +13,18 @@ import {
 	NewPost,
 	BlogListPage,
 } from "../components";
+import { UserContext } from "../UserContext";
 
 const HomePage = () => {
+
+	const { isLoggedIn } = useContext(UserContext);
+	const loginGate = true
+
+
 	return (
 		<>
 			<Hero />
-            <BlogList />
+			{loginGate && isLoggedIn && <BlogList />}
 			<About />
 			<Experience />
 			<Tech />

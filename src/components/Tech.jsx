@@ -17,12 +17,12 @@ const Tech = () => {
           {sectionOverviews[2].title}
         </h2>
       </motion.div>
-      <div className="mt-20 flex flex-row flex-wrap items-center justify-center gap-6">
+      <div className="flex flex-row flex-wrap items-center justify-center w-full mx-auto mt-12 space-x-4 space-y-4 ">
         {technologies.map((technology, index) => (
           <img key={`${technology.name}-${index}`}
             src={technology.icon}
             alt={technology.name}
-            className="h-20 w-20 lg:h-28 lg:w-28 object-contain" />
+            className="object-contain w-1/6 sm:w-1/5 lg:col-span-1 md:w-1/6 lg:w-1/12" />
         ) )}
       </div>
     </div>

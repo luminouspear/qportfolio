@@ -55,6 +55,7 @@ export const navLinks = [
 		id: "blog",
 		title: "Blog",
 		page: true,
+		loginRequired: true,
 		linkTo: "/blog",
 	},
 	{

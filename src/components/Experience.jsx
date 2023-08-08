@@ -15,7 +15,7 @@ import { ExperienceCard } from "./ExperienceCard";
 
 const Experience = () => {
 	return (
-		<div className={`${styles.paddingX} mx-auto max-w-7xl mt-12`}>
+		<section className={`${styles.paddingX} mx-auto max-w-7xl mt-12 `}>
 			<motion.div >
 				<h3 className={styles.darkSectionSubText}>
 					{sectionOverviews[1].subtitle}
@@ -25,29 +25,29 @@ const Experience = () => {
 				</h2>
 			</motion.div>
 
-			<div className="mt-20 flex flex-col">
+			<div className="flex flex-col mt-12">
 				<VerticalTimeline>
 					{experiences.map((experience, index) => (
 						<ExperienceCard key={index} experience={experience} />
 					))}
 				</VerticalTimeline>
 			</div>
-			<div className="flex flex-col md:flex-row gap-6 px-2 md:px-4 lg:px-6 xl:px-12">
+			<div className="grid grid-flow-row gap-6 md:grid-flow-col ">
 				{additionalExperiences.map((experience, index) => (
 					<div
 						key={`experience-${index}`}
-						className="w-full md:w-1/3 flex flex-col bg-primary-green p-8 rounded-md"
+						className="flex flex-col w-full p-8 rounded-md md:w-full bg-primary-green"
 					>
-						<h3 className="text-qportfolio-white font-bold mb-6 text-xl">
+						<h3 className="mb-6 text-xl font-bold text-qportfolio-white">
 							{experience.title}
 						</h3>
-						<p className="text-qportfolio-white text-base">
+						<p className="text-base text-qportfolio-white">
 							{experience.subtitle}
 						</p>
 					</div>
 				))}
 			</div>
-		</div>
+		</section>
 	);
 };
 
