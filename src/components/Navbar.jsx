@@ -25,15 +25,7 @@ const Navbar = () => {
 			? "https://danmccollum.com"
 			: "http://127.0.0.1:4000";
 
-	useEffect(() => {
-		fetch(`${path}/profile`, {
-			credentials: "include",
-		}).then((res) => {
-			res.json().then((userInfo) => {
-				setUserInfo(userInfo);
-			});
-		});
-	}, []);
+
 
 	function logout() {
 		fetch(`${path}/logout`, {
@@ -172,22 +164,19 @@ const Navbar = () => {
 										active === link.title
 											? "text-white"
 											: "text-secondary"
+									} ${
+										link.loginRequired
+											? username
+												? " inline"
+												: " hidden"
+											: " "
 									} hover:text-white text-[16px] font-medium cursor-pointer`}
 									onClick={() => {
 										setToggle(!toggle);
 										setActive(link.title);
 									}}
 								>
-									<a
-										href={`#${link.id}`}
-										className={`${
-											active === link.title
-												? "text-secondary-green font-bold"
-												: "text-qportfolio-white font-medium"
-										} hover:text-white text-xl font-medium cursor-pointer`}
-									>
-										{link.title}
-									</a>
+									{renderLink(link)}
 								</li>
 							))}
 						</ul>
