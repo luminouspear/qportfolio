@@ -5,6 +5,7 @@ import { SectionWrapper } from "../hoc";
 import { sectionOverviews, projects, legacyProjects } from "../constants";
 import { fadeIn, textVariant } from "../utils/motion";
 import { ProjectCard } from "./ProjectCard";
+import { Link } from "react-router-dom";
 
 const Projects = () => {
 	return (
@@ -59,6 +60,7 @@ const Projects = () => {
 						/>
 					))}
 				</div>
+				<div className="flex justify-center w-full mt-12 "><Link to="/casestudy" className="w-full py-4 mx-auto text-xl font-bold text-center rounded bg-qportfolio-white text-qportfolio-secondary-green hover:text-qportfolio-primary-green lg:w-1/3">View Case Studies</Link></div>
 			</div>
 		</div>
 	);

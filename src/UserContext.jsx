@@ -17,10 +17,14 @@ export function UserContextProvider({ children }) {
 			credentials: "include",
 		})
 			.then((response) => {
+				if (response.status === 401) {
+					// Handle the specific status code for missing authentication
+					throw new Error("Not logged in");
+				}
 				if (response.ok) {
 					return response.json();
 				} else {
-					throw new Error("Not logged in");
+					throw new Error("An error occurred");
 				}
 			})
 			.then(() => {

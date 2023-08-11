@@ -34,7 +34,6 @@ import woodbury from "./company/woodbury.png";
 import quotient from "./company/quotient.png";
 import appiction from "./company/appiction.png";
 
-
 import siegecraft from "./siegecraft.jpg";
 import simcoestitchcraft from "./simcoestitchcraft.jpg";
 import makermanager from "./makermanager.jpg";
@@ -50,6 +49,12 @@ import icon_uxdesign from "./icon_uxdesign.svg";
 import icon_adulteducation from "./icon_adulteducation.svg";
 import icon_gamedesign from "./icon_games.svg";
 import icon_webdevelopment from "./icon_webdevelopment.svg";
+import icon_expand from "./icon_expand.svg";
+import icon_upgrade from "./icon_upgrade.svg";
+import icon_refresh from "./icon_refresh.svg";
+import icon_winner from "./icon_winner.svg";
+import icon_simplify from "./icon_simplify.svg";
+import icon_choice from "./icon_choice.svg";
 
 import gallery1 from "./gallery1.jpg";
 import gallery2 from "./gallery2.jpg";
@@ -57,6 +62,15 @@ import gallery3 from "./gallery3.jpg";
 
 import quentin_caron from "./quentin_caron_testimonial.jpg";
 import janice_cheng from "./janice_cheng_testimonial.png";
+
+import casestudy_hero_fastpass_plus from "./casestudy_image_fastpass_hero.jpg";
+import casestudy_image_mdx1 from "./casestudy_image_mdx1.jpg";
+import casestudy_image_fastpass1 from "./casestudy_image_fastpass1.png";
+import casestudy_image_mdx_before from "./casestudy_image_mdx_before.png";
+import casestudy_image_mdx_after from "./casestudy_image_mdx_after.jpg";
+import casestudy_image_fpp_update1 from "./casestudy_image_fpp_update1.webp";
+import casestudy_image_fpp_update2 from "./casestudy_image_fpp_update2.webp";
+import casestudy_image_fpp_old from "./casestudy_image_fpp_old.jpg"
 
 export {
 	logo,
@@ -103,9 +117,23 @@ export {
 	icon_adulteducation,
 	icon_gamedesign,
 	icon_webdevelopment,
+	icon_expand,
+	icon_upgrade,
+	icon_refresh,
+	icon_winner,
+	icon_simplify,
+	icon_choice,
 	gallery1,
 	gallery2,
 	gallery3,
 	quentin_caron,
 	janice_cheng,
+	casestudy_hero_fastpass_plus,
+	casestudy_image_mdx1,
+	casestudy_image_fastpass1,
+	casestudy_image_mdx_before,
+	casestudy_image_mdx_after,
+	casestudy_image_fpp_update1,
+	casestudy_image_fpp_update2,
+	casestudy_image_fpp_old,
 };

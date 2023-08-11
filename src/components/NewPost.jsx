@@ -17,6 +17,7 @@ const NewPost = () => {
 	const [content, setContent] = useState("");
 	const [files, setFiles] = useState("");
 	const [featured, setFeatured] = useState(false);
+	const [slug, setSlug] = useState("")
 
 	const now = new Date();
 	const timezoneOffsetInMs = now.getTimezoneOffset() * 60 * 1000;

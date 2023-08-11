@@ -16,6 +16,8 @@ import LoginPage from "./components/LoginPage";
 import RegisterPage from "./components/RegisterPage";
 import { UserContextProvider } from "./UserContext";
 import { showTailwindDebug } from "./showTailwindDebug";
+import CaseStudyPage from "./components/casestudy/CaseStudyPage";
+import CaseStudyList from "./components/casestudy/CaseStudyList";
 
 const App = () => {
 	const debugWindowSize = false;
@@ -55,6 +57,8 @@ const App = () => {
 						{/* <Route path={"/register"} element={<RegisterPage />} /> */}
 						<Route path={"/newpost"} element={<NewPost />} />
 						<Route path={"/post/:id"} element={<BlogPostPage />} />
+						<Route path={"/casestudy"} element={<CaseStudyList/> } />
+						<Route path={ "/casestudy/:id"} element={<CaseStudyPage />} />
 						<Route path={"/blog"} element={<BlogListPage />} />
 						<Route path={"/edit/:id"} element={<EditPost />} />
 						<Route path={"/404"} element={<NotFoundPage />} />

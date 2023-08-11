@@ -20,9 +20,10 @@ const Navbar = () => {
 	const location = useLocation();
 	const isIndex = location.pathname === "/";
 
-	const path = process.env.NODE_ENV === "production"
+	const path =
+		process.env.NODE_ENV === "production"
 			? "https://danmccollum.com"
-			: "http://127.0.0.1:4000"
+			: "http://127.0.0.1:4000";
 
 	useEffect(() => {
 		fetch(`${path}/profile`, {
@@ -123,16 +124,14 @@ const Navbar = () => {
 					/>
 					<p className="text-primary-green text-[16px] font-bold cursor-pointer font-gloock">
 						Dan McCollum{" "}
-						<span className="relative hidden text-sm font-thin md:inline-block font-activo">
+						<span className="relative hidden text-sm font-thin md:inline-block font-archivo">
 							<span className="">|</span> Designer,
 							Educator,&nbsp;
-							<span className="">
-								Developer
-							</span>
+							<span className="">Developer</span>
 						</span>
 					</p>
 				</Link>
-				<ul className="flex-row hidden gap-10 mt-2 list-none md:flex md:gap-6 font-activo">
+				<ul className="flex-row hidden gap-10 mt-2 list-none md:flex md:gap-6 font-archivo">
 					{navLinks.map((link) => {
 						return (
 							<li
@@ -152,7 +151,6 @@ const Navbar = () => {
 							</li>
 						);
 					})}
-
 				</ul>
 				<div className="flex items-center justify-end flex-1 md:hidden">
 					<img
@@ -164,7 +162,7 @@ const Navbar = () => {
 					<div
 						className={`${
 							toggle ? "flex" : "hidden"
-						} p-6 black-gradient absolute top-20 right-0 mx-4 my-2 min-w-[140px] z-30 rounded-xl text-white font-activo`}
+						} p-6 black-gradient absolute top-20 right-0 mx-4 my-2 min-w-[140px] z-30 rounded-xl text-white font-archivo`}
 					>
 						<ul className="flex flex-col justify-end gap-4 list-none ">
 							{navLinks.map((link) => (

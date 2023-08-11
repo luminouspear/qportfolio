@@ -6,7 +6,7 @@ module.exports = {
 		extend: {
 			fontFamily: {
 				gloock: ["Gloock", "serif"],
-				activo: ["Activo", "sans-serif"],
+				archivo: ["Archivo", "sans-serif"],
 			},
 			textDecorationColor: {
 				primary: "#122111",
