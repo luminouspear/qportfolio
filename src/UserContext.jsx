@@ -7,31 +7,22 @@ export function UserContextProvider({ children }) {
 	const [isLoggedIn, setIsLoggedIn] = useState(false);
 	const [loading, setLoading] = useState(true);
 
-		const path =
-			process.env.NODE_ENV === "production"
-				? "https://danmccollum.com"
-				: "http://127.0.0.1:4000";
+	const path =
+		process.env.NODE_ENV === "production"
+			? "https://danmccollum.com"
+			: "http://127.0.0.1:4000";
 
 	useEffect(() => {
 		fetch(`${path}/profile`, {
 			credentials: "include",
 		})
-			.then((response) => {
-				if (response.status === 401) {
-					// Handle the specific status code for missing authentication
-					throw new Error("Not logged in");
-				}
-				if (response.ok) {
-					return response.json();
+			.then((response) => response.json())
+			.then((data) => {
+				if (data.authenticated) {
+					setIsLoggedIn(true);
 				} else {
-					throw new Error("An error occurred");
+					setIsLoggedIn(false);
 				}
-			})
-			.then(() => {
-				setIsLoggedIn(true);
-			})
-			.catch((error) => {
-				setIsLoggedIn(false);
 			})
 			.finally(() => {
 				setLoading(false); // Set loading state to false after the fetch request has completed

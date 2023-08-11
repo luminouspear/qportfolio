@@ -90,15 +90,15 @@ app.get("/profile", (req, res) => {
 
 	if (!token) {
 		// Return a specific status code to indicate that the user is not authenticated
-		return res.status(401).json({ message: "No authentication provided" });
+		return res.status(200).json({ authenticated: false });
 	}
 
 	jwt.verify(token, secret, {}, (err, info) => {
 		if (err) {
 			// Handle verification error
-			return res.status(403).json({ error: "Invalid token" });
+			return res.status(200).json({ authenticated: false });
 		}
-		res.json(info);
+		res.json({authenticated: true, user: info});
 	});
 });
 

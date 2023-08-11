@@ -19,7 +19,7 @@ const HomePage = () => {
 
 	const { isLoggedIn } = useContext(UserContext);
 	const loginGate = true
-	console.log("isLoggedIn: ", isLoggedIn)
+	// console.log("isLoggedIn: ", isLoggedIn)
 
 
 	return (

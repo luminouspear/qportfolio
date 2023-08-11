@@ -11,7 +11,6 @@ import {
 	BlogListPage,
 	NotFoundPage,
 } from "./components";
-import Layout from "./Layout";
 import LoginPage from "./components/LoginPage";
 import RegisterPage from "./components/RegisterPage";
 import { UserContextProvider } from "./UserContext";
@@ -24,26 +23,26 @@ const App = () => {
 
 	const [loggedIn, setLoggedIn] = useState(false);
 
-	useEffect(() => {
-		const checkLoggedIn = async () => {
-			try {
-				const response = await fetch("/profile", {
-					credentials: "include", // This is necessary to include the cookies
-				});
+	// useEffect(() => {
+	// 	const checkLoggedIn = async () => {
+	// 		try {
+	// 			const response = await fetch("/profile", {
+	// 				credentials: "include", // This is necessary to include the cookies
+	// 			});
 
-				if (response.status === 200) {
-					setLoggedIn(true);
-				} else {
-					setLoggedIn(false);
-				}
-			} catch (error) {
-				console.error("Error fetching profile:", error);
-				setLoggedIn(false);
-			}
-		};
+	// 			if (response.status === 200) {
+	// 				setLoggedIn(true);
+	// 			} else {
+	// 				setLoggedIn(false);
+	// 			}
+	// 		} catch (error) {
+	// 			console.error("Error fetching profile:", error);
+	// 			setLoggedIn(false);
+	// 		}
+	// 	};
 
-		checkLoggedIn();
-	}, []);
+	// 	checkLoggedIn();
+	// }, []);
 
 	return (
 		<UserContextProvider>
@@ -54,7 +53,7 @@ const App = () => {
 					<Routes>
 						<Route index element={<HomePage />} />
 						<Route path={"/login"} element={<LoginPage />} />
-						{/* <Route path={"/register"} element={<RegisterPage />} /> */}
+						<Route path={"/register"} element={<RegisterPage />} />
 						<Route path={"/newpost"} element={<NewPost />} />
 						<Route path={"/post/:id"} element={<BlogPostPage />} />
 						<Route path={"/casestudy"} element={<CaseStudyList/> } />
