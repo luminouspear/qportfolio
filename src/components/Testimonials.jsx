@@ -19,7 +19,7 @@ const Testimonials = () => {
 				<h2 className={styles.whiteSectionHeadText}>
 					{sectionOverviews[4].title}
 				</h2>
-			</motion.div>
+			</motion.div>œ
 			<div
 				className={`mt-12 pb-14 flex flex-col flex-wrap space-y-6 text-qportfolio-white`}
 			>

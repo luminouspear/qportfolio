@@ -54,6 +54,55 @@ import {
 	casestudy_image_mdx_after,
 	casestudy_image_fpp_old,
 	casestudy_image_fpp_update1,
+	sketch_example_1,
+	sketch_example_2,
+	sketch_example_3,
+	sketch_example_4,
+	sketch_example_5,
+	sketch_example_6,
+	wireframe_example_1,
+	wireframe_example_2,
+	wireframe_example_3,
+	wireframe_example_4,
+	wireframe_example_5,
+	wireframe_example_6,
+	prototype_example_1,
+	prototype_example_2,
+	prototype_example_3,
+	ga_presentation,
+	icon_nngroup,
+	icon_ideo,
+	icon_ixdf,
+	research_example_6,
+	research_example_5,
+	research_example_4,
+	research_example_3,
+	research_example_2,
+	research_example_1,
+	portfolio_thumbnail_teresa_lu,
+	portfolio_thumbnail_abel_rondon,
+	portfolio_thumbnail_ammara_wasim,
+	portfolio_thumbnail_claudia_lin,
+	portfolio_thumbnail_criselda_tejada,
+	portfolio_thumbnail_crystal_huang,
+	portfolio_thumbnail_dada_park,
+	portfolio_thumbnail_isaac_tam,
+	portfolio_thumbnail_janice_cheng,
+	portfolio_thumbnail_jeff_burnett,
+	portfolio_thumbnail_jenn_oriano,
+	portfolio_thumbnail_justine_moore,
+	portfolio_thumbnail_lori_chai,
+	portfolio_thumbnail_manoshi_roy,
+	portfolio_thumbnail_marc_varone,
+	portfolio_thumbnail_michelle_you,
+	portfolio_thumbnail_nandini_navre,
+	portfolio_thumbnail_quentin_caron,
+	portfolio_thumbnail_rachel_coelho,
+	portfolio_thumbnail_randy_rajaram,
+	portfolio_thumbnail_saakshi_dhingra,
+	portfolio_thumbnail_sarina_luchetta,
+	portfolio_thumbnail_scott_jefferis,
+	portfolio_thumbnail_jimin_lee,
 } from "../assets";
 
 export const navLinks = [
@@ -542,7 +591,332 @@ const blogTestData = [
 
 const caseStudyContent = [
 	{
+		id: "ga",
+		pageTitle: "General Assembly Case Study",
+		heading: "Shaping the Future of UX Design",
+		subHeading: "Guiding the learning of the next generation of our craft.",
+		heroImage: ga_presentation,
+		heroImageAlt:
+			"Photo of student presentations at General Aseembly Toronto",
+		role: "Lead User Experience Design Instructor @ General Assembly Toronto",
+		tools: [
+			{ icon: figma, alt: "Figma" },
+			{ icon: sketch, alt: "Sketch" },
+			{ icon: axure, alt: "Axure" },
+		],
+		duration: "4 years (2019 - 2023)",
+		gallery: [
+			[
+				{
+					src: sketch_example_1,
+					alt: "A sketched flow demonstrating updates to a mobile website.",
+					description:
+						"A sketched flow demonstrating updates to a mobile website.",
+				},
+				{
+					src: sketch_example_2,
+					alt: "Analysis of the UberEats app broken down into iterative sketches, by 'The Plastics', aka Bryce Misener, Joanna D'Amico and Crystal Huang",
+					description:
+						"Analysis of the UberEats app broken down into iterative sketches, by 'The Plastics', aka Bryce Misener, Joanna D'Amico and Crystal Huang",
+				},
+				{
+					src: sketch_example_3,
+					alt: "A series of sketches for the Royal Ontario Museum redesign project. By Marielle Lacea, Sam Choi, Tiziana Bucher, Quentin Caron and Ian Gabriel.",
+					description:
+						"A series of sketches for the Royal Ontario Museum redesign project. By Marielle Lacea, Sam Choi, Tiziana Bucher, Quentin Caron and Ian Gabriel.",
+				},
+				{
+					src: sketch_example_4,
+					alt: "A series of sketches exploring a flow for the Royal Ontario Museum redesign project. By Marielle Lacea, Sam Choi, Tiziana Bucher, Quentin Caron and Ian Gabriel.",
+					description:
+						"A series of sketches exploring a flow for the Royal Ontario Museum redesign project. By Marielle Lacea, Sam Choi, Tiziana Bucher, Quentin Caron and Ian Gabriel.",
+				},
+				{
+					src: sketch_example_5,
+					alt: "A wireframe and sketch example from Project 2, exploring updates to Android and Material Design.",
+					description:
+						"A wireframe and sketch example from Project 2, exploring updates to Android and Material Design.",
+				},
+				{
+					src: sketch_example_6,
+					alt: "Sketch analysis of the Green P payment flow, updated with a sketch.",
+					description:
+						"Sketch analysis of the Green P payment flow, updated with a sketch.",
+				},
+			],
+			[
+				{
+					src: wireframe_example_1,
+					alt: "Iterated high-fidelity wreframes for Crystal Huang's Bike Share Toronto redesign project.",
+					description:
+						"Iterated high-fidelity wreframes for Crystal Huang's Bike Share Toronto redesign project.",
+				},
+
+				{
+					src: wireframe_example_2,
+					alt: "Brianna Hugh demonstrates updates she made to the Google Maps app based on feedback from users.",
+					description:
+						"Brianna Hugh demonstrates updates she made to the Google Maps app based on feedback from users.",
+				},
+				{
+					src: wireframe_example_3,
+					alt: "Iterated updates from a design team researching eCommerce updates to the IKEA website (2020).",
+					description:
+						"Iterated updates from a design team researching eCommerce updates to the IKEA website (2020).",
+				},
+				{
+					src: wireframe_example_4,
+					alt: "Before & after iterated updates to the Royal Ontario Museum project.",
+					description:
+						"Before & after iterated updates to the Royal Ontario Museum project.",
+				},
+				{
+					src: wireframe_example_5,
+					alt: "A team demonstrates wireframe updates to Lyft to support long distance driving.",
+					description:
+						"A team demonstrates wireframe updates to Lyft to support long distance driving.",
+				},
+			],
+
+			[
+				{
+					src: prototype_example_1,
+					alt: "Mobile prototype called Bookworm, created by designers Alistair Kim and Brianna Hugh for the Adobe Xd Creative Jam. The team utilized Xd and Lottie animations for their prototype.",
+					description:
+						"Mobile prototype called Bookworm, created by designers Alistair Kim and Brianna Hugh for the Adobe Xd Design Challenge. The team utilized Xd and Lottie animations for their prototype.",
+				},
+				{
+					src: prototype_example_2,
+					alt: "An interactive high fidelity mobile prototype for Well.ca, a health and wellness eCommerce site.",
+					description:
+						"An interactive high fidelity mobile prototype for Well.ca, a health and wellness eCommerce site.",
+				},
+				{
+					src: prototype_example_3,
+					alt: "Updated interactive PC prototype for Hello Fresh, exploring opportunities to fix issues for users of the service.",
+					description:
+						"Updated interactive PC prototype for Hello Fresh, exploring opportunities to fix issues for users of the service.",
+				},
+			],
+			[
+				{
+					src: research_example_1,
+					alt: "Nandini Navre demonstrates her two week design process.",
+					description:
+						"Nandini Navre demonstrates her two week design process.",
+				},
+				{
+					src: research_example_2,
+					alt: "Isaac Tam demonstrates the results of his proto user persona exercise.",
+					description:
+						"Isaac Tam demonstrates the results of his proto user persona exercise.",
+				},
+				{
+					src: research_example_3,
+					alt: "Ammara Wasim's collected key quotes from 10 user interviews.",
+					description:
+						"Ammara Wasim's collected key quotes from 10 user interviews.",
+				},
+				{
+					src: research_example_4,
+					alt: "Jenn Oriano demonstrates iterative updates she made based on user feedback.",
+					description:
+						"Jenn Oriano demonstrates iterative updates she made based on user feedback.",
+				},
+				{
+					src: research_example_5,
+					alt: "The team demonstrates the results of an A/B test done during their project to determine which tag users liked best on Amazon Prime.",
+					description:
+						"The team demonstrates the results of an A/B test done during their project to determine which tag users liked best on Amazon Prime.",
+				},
+				{
+					src: research_example_6,
+					alt: "The team demonstrates wireframe changes made to the Zara website redesgin project based on user feedback.",
+					description:
+						"The team demonstrates wireframe changes made to the Zara website redesgin project based on user feedback.",
+				},
+			],
+		],
+		theoryAndPractice: {
+			theory: {
+				heading: "A strong theoretical foundation",
+				text: "Most senior designers I've met (like myself) have been largely self-taught. But there is a wealth of amazing theory that underlies user experience design.<br /><br />Starting from insights from the <a href='http://nngroup.com' target='_blank'>Nielsen-Norman Group</a>, <a href='http://ideo.com' target='_blank'>IDEO</a> and the <a href='http://interaction-design.org' target='_blank'>Interaction Design Foundation, </a> student-designers were equipped with a strong theoretical understanding of critical topics in user experience, like <strong>Information Architecture, Interaction Design, Visual Design, Typography, Colour Theory, Information Design and Content Strategy.</strong>",
+				thumbnails: [
+					{ icon: icon_nngroup, alt: "Nielsen-Norman Group Logo" },
+					{ icon: icon_ideo, alt: "IDEO Logo" },
+					{
+						icon: icon_ixdf,
+						alt: "Interaction Design Foundation Logo",
+					},
+				],
+			},
+			practice: {
+				heading: "Making the theoretical real",
+				text: "Theory is nothing if we don't put it into use. My designers were prepared for real working conditions in real companies based on my extensive experience in design and adult education.<br /><br /> In order to compete in the modern design landscape, students needed to be familiar with <strong>Agile</strong> and <strong>Waterfall</strong> workflows, how to work in a <strong>Lean UX</strong> practice, how to work with their fellow designers, clients and stakeholders, and how to use <strong>design tools like Figma, Xd, Sketch, InVision and Framer</strong>  for practical wireframing and basic and advanced prototyping.",
+				thumbnails: [
+					{ icon: figma, alt: "Figma Logo" },
+					{ icon: framer, alt: "Framer logo" },
+					{
+						icon: xd,
+						alt: "Adobe Xd Logo",
+					},
+				],
+			},
+		},
+		portfolios: {
+			heading: "A Collection of Designer Portfolios",
+			subheading:
+				"My design students are in the world today making an impact at real companies. Check out some of their work.",
+			portfolioGallery: [
+				{
+					thumbnail: portfolio_thumbnail_teresa_lu,
+					link: "https://www.luteresa.com",
+					name: "Teresa Lu",
+				},
+				{
+					thumbnail: portfolio_thumbnail_abel_rondon,
+					link: "https://www.abelrondon.com",
+					name: "Abel Rondon",
+				},
+				{
+					thumbnail: portfolio_thumbnail_ammara_wasim,
+					link: "https://ammarawasim.com",
+					name: "Ammara Wasim",
+				},
+				{
+					thumbnail: portfolio_thumbnail_claudia_lin,
+					link: "https://claudiaux.wixsite.com/portfolio",
+					name: "Claudia Lin",
+				},
+				{
+					thumbnail: portfolio_thumbnail_criselda_tejada,
+					link: "https://criseldatejada.com",
+					name: "Criselda Tejada",
+				},
+				{
+					thumbnail: portfolio_thumbnail_crystal_huang,
+					link: "https://crystalhuang.myportfolio.com/work",
+					name: "Crystal Huang",
+				},
+				{
+					thumbnail: portfolio_thumbnail_dada_park,
+					link: "https://dadapark.github.io",
+					name: "Dada Park",
+				},
+				{
+					thumbnail: portfolio_thumbnail_isaac_tam,
+					link: "https://www.isaactam.com",
+					name: "Isaac Tam",
+				},
+				{
+					thumbnail: portfolio_thumbnail_janice_cheng,
+					link: "https://www.janicecheng.me",
+					name: "Janice Cheng",
+				},
+				{
+					thumbnail: portfolio_thumbnail_jeff_burnett,
+					link: "https://www.jeffaburnett.com",
+					name: "Jeff A. Burnett",
+				},
+				{
+					thumbnail: portfolio_thumbnail_jenn_oriano,
+					link: "https://www.jenniferoriano.com",
+					name: "Jenn Oriano",
+				},
+				{
+					thumbnail: portfolio_thumbnail_justine_moore,
+					link: "https://www.justine-moore.com",
+					name: "Justine Moore",
+				},
+				{
+					thumbnail: portfolio_thumbnail_lori_chai,
+					link: "https://www.lorichai.com",
+					name: "Lori Chai",
+				},
+				{
+					thumbnail: portfolio_thumbnail_manoshi_roy,
+					link: "https://manoshiroy.com",
+					name: "Manoshi Roy",
+				},
+				{
+					thumbnail: portfolio_thumbnail_marc_varone,
+					link: "https://www.marcvarone.com",
+					name: "Marc Varone",
+				},
+				{
+					thumbnail: portfolio_thumbnail_michelle_you,
+					link: "https://michelleyou.wixsite.com/home",
+					name: "Michelle You",
+				},
+				{
+					thumbnail: portfolio_thumbnail_nandini_navre,
+					link: "https://www.nandininavre.com",
+					name: "Nandini Navre",
+				},
+				{
+					thumbnail: portfolio_thumbnail_quentin_caron,
+					link: "https://quentincarondesign.myportfolio.com/",
+					name: "Quentin Caron",
+				},
+				{
+					thumbnail: portfolio_thumbnail_rachel_coelho,
+					link: "https://www.rochelle-coelho.com",
+					name: "Rochelle Coelho",
+				},
+				{
+					thumbnail: portfolio_thumbnail_randy_rajaram,
+					link: "https://randyrajaram.com",
+					name: "Randy Rajaram",
+				},
+				{
+					thumbnail: portfolio_thumbnail_saakshi_dhingra,
+					link: "https://www.saaaksh.com",
+					name: "Saakshi Dhingra",
+				},
+				{
+					thumbnail: portfolio_thumbnail_sarina_luchetta,
+					link: "https://sarinaluchetta.com",
+					name: "Sarina Luchetta",
+				},
+				{
+					thumbnail: portfolio_thumbnail_scott_jefferis,
+					link: "https://scott-a-jefferis.com",
+					name: "Scott A. Jefferis",
+				},
+				{
+					thumbnail: portfolio_thumbnail_jimin_lee,
+					link: "https://www.jimin-lee.com",
+					name: "Jimin Lee",
+				},
+			],
+		},
+		testimonials: {
+			heading: "Making an Difference",
+			subHeading:
+				"Consistently among the highest rated instructors at General Assembly, I finished my final course with an NPS score of 100. 🏅<br/><br/>But don't take my word for it; from my students in their own words:",
+			testimonialCards: [
+				{
+					testimonial: "Dan has been my instructor at General Assembly and mentor since 2020. He has been extremely dedicated to helping all of us start our careers and grow both our knowledge and confidence in ourselves. Clearly knowledgable about the craft and the industry, and someone with a big heart and willingness to help. <strong>I'm very grateful to have had such reliable support through the twists and turns of making a career change.</strong> No doubt he dedicates himself wherever he goes!",
+					name: "Janice Yang",
+				},
+				{
+					testimonial: "Whether he intended it or not, Dan was our mentor in the truest sense of the word. <strong>His expertise as a design industry professional, combined with his extensive experience as an educator, was truly invaluable to our cohort of adult learners making a transition into new careers.</strong> His unwavering commitment to providing a comprehensive education that adequately prepared us for real-world scenarios was remarkable. Dan's vast knowledge, teaching and dedication to ensuring that his students received both in-class and outside support, made him a phenomenal instructor and mentor. Being under his tutelage was an exceptional experience that contributed significantly to our professional and personal development. His approach to education was a perfect blend of theoretical and practical aspects, making our journey towards career success not only productive but also exciting. It was a privilege to have been a part of Dan's class, and his impact on our lives will undoubtedly be felt for years to come.",
+					name: "Cohort 33 (Periwinkle)",
+				},
+				{
+					testimonial: "As a product designer in the SAAS space, Dan's leadership as Lead UX Instructor at General Assembly was instrumental in my professional development. <strong>Dan's excellent design communication skills and his versatility as a UX practitioner helped bring clarity to my design process and helped me articulate design principles and decisions to project stakeholders.</strong> In my time of knowing Dan, he is always introducing useful methods to team projects that lead to useful product discoveries and better user experiences. Working with Dan is invaluable. I would be honored to learn with him again!",
+					name: "Janice Cheng",
+				},
+				{
+					testimonial: "<strong>Dan is not only an expert in the design industry but also someone who genuinely cares about his student's growth and success.</strong> His intuition and empathy as a teacher have been invaluable in shaping my design style and approach. He even encouraged and supported me in creating a workshop for new designers, igniting a new passion for teaching. If you have the opportunity to work with Dan, I highly recommend taking it – he is an exceptional instructor and mentor who will undoubtedly inspire and guide you to reach your full potential.",
+					name: "Quentin Caron",
+				},
+			],
+		},
+	},
+	{
 		id: "fastpass",
+		version: 1,
 		pageTitle: "Disney's FastPass+ Redesign Case Study",
 		heading: "Redesigning Disney's FastPass+",
 		subHeading: "Re-imagining a classic Disney parks experience.",
@@ -660,6 +1034,7 @@ const caseStudyContent = [
 	},
 	{
 		id: "mdx",
+		version: 1,
 		pageTitle: "My Disney Experience Design Case Study",
 		heading: "Designing My Disney Experience",
 		subHeading:

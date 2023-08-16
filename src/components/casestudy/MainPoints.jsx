@@ -18,11 +18,13 @@ export function MainPoints(caseStudy, id) {
 				className={`grid grid-flow-col grid-cols-12 lg:grid-flow-row gap-4 lg:w-10/12 mx-auto `}
 			>
 				{caseStudy.mainPoints.map((point) => {
-					const delay = 0.2 * (point.id - 1);
+					const delay = Number(0.2 * point.id);
+
 					return (
 						<motion.div
-							variants={fadeIn("up", "tween", delay, 0.33)}
-							animate="show"
+							initial={{ y: -100, opacity: 0 }}
+							animate={{ y: 0, opacity: 1 }}
+							transition={{ delay: delay }}
 							key={point.id}
 							className="flex flex-col items-center justify-center w-10/12 py-12 mx-auto rounded lg:py-16 bg-qportfolio-black col-span-full lg:col-span-4 lg:w-full font-archivo"
 						>

@@ -10,8 +10,14 @@ import { ServiceCard } from "./ServiceCard";
 
 const About = () => {
 	return (
-		<section className={` mx-auto max-w-7xl mt-12 flex flex-col justify-center `}>
-			<motion.div variants={textVariant()}>
+		<section
+			className={` mx-auto max-w-7xl mt-12 flex flex-col justify-center `}
+		>
+			<motion.div
+				variants={textVariant(0.25)}
+				initial="hidden"
+				animate="show"
+			>
 				<p className={styles.darkSectionSubText}>
 					{sectionOverviews[0].subtitle}
 				</p>
@@ -20,7 +26,10 @@ const About = () => {
 				</h2>
 			</motion.div>
 
-			<motion.p variants={fadeIn("", "", 0.1, 1)} className="w-full text-xl md:w-8/12 ">
+			<motion.p
+				variants={textVariant(0.25)}
+				className="w-full text-xl md:w-8/12 "
+			>
 				{sectionOverviews[0].body}
 			</motion.p>
 

@@ -16,6 +16,8 @@ export const ServiceCard = ({ index, title, icon }) => {
 		>
 			<motion.div
 				variants={fadeIn("right", "spring", -0.5 * index, 0.075)}
+				initial="hidden"
+				animate="show"
 				className="w-full h-full bg-primary-green group hover:bg-secondary-green px-1.5 py-8 lg:py-16 rounded-xl shadow-inner flex flex-col items-center justify-center gap-6 group"
 			>
 				<img

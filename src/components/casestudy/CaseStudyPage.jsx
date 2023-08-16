@@ -21,7 +21,7 @@ const CaseStudyPage = () => {
 			navigate("/404");
 		} else {
 			document.title = getPageTitle(caseStudy.pageTitle);
-			window.scrollTo(0, 0);
+			// window.scrollTo(0, 0);
 		}
 	}, [id, caseStudy, navigate]);
 

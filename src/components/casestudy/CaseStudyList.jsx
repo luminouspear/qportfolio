@@ -27,7 +27,7 @@ const CaseStudyList = () => {
 						<Link
 							key={caseStudy.id}
 							className="flex flex-col space-y-6 cursor-pointer lg:flex-row group"
-							to={caseStudy.id}
+							to={caseStudy.version === 1 ? `${caseStudy.id}/v1` : `${caseStudy.id}/v2` }
 						>
 							<img
 								src={caseStudy.heroImage}

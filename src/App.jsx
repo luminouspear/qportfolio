@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Outlet } from "react-router-dom";
 import React, { useState, useEffect } from "react";
 
 import HomePage from "./components/HomePage";
@@ -17,32 +17,10 @@ import { UserContextProvider } from "./UserContext";
 import { showTailwindDebug } from "./showTailwindDebug";
 import CaseStudyPage from "./components/casestudy/CaseStudyPage";
 import CaseStudyList from "./components/casestudy/CaseStudyList";
+import CaseStudyv2 from "./components/casestudy/CaseStudyv2.jsx";
 
 const App = () => {
 	const debugWindowSize = false;
-
-	const [loggedIn, setLoggedIn] = useState(false);
-
-	// useEffect(() => {
-	// 	const checkLoggedIn = async () => {
-	// 		try {
-	// 			const response = await fetch("/profile", {
-	// 				credentials: "include", // This is necessary to include the cookies
-	// 			});
-
-	// 			if (response.status === 200) {
-	// 				setLoggedIn(true);
-	// 			} else {
-	// 				setLoggedIn(false);
-	// 			}
-	// 		} catch (error) {
-	// 			console.error("Error fetching profile:", error);
-	// 			setLoggedIn(false);
-	// 		}
-	// 	};
-
-	// 	checkLoggedIn();
-	// }, []);
 
 	return (
 		<UserContextProvider>
@@ -56,14 +34,21 @@ const App = () => {
 						{/* <Route path={"/register"} element={<RegisterPage />} /> */}
 						<Route path={"/newpost"} element={<NewPost />} />
 						<Route path={"/post/:id"} element={<BlogPostPage />} />
-						<Route path={"/casestudy"} element={<CaseStudyList/> } />
-						<Route path={ "/casestudy/:id"} element={<CaseStudyPage />} />
+						<Route
+							path={"/casestudy"}
+							element={<CaseStudyList />}
+						/>
+						<Route path={"/casestudy/:id"} element={<Outlet />}>
+							<Route path={"v1"} element={<CaseStudyPage />} />
+							<Route path={"v2"} element={<CaseStudyv2 />} />
+						</Route>
 						<Route path={"/blog"} element={<BlogListPage />} />
 						<Route path={"/edit/:id"} element={<EditPost />} />
+						<Route path={"/test"} element={<CaseStudyv2 />} />
 						<Route path={"/404"} element={<NotFoundPage />} />
 					</Routes>
-					<Footer />
 				</div>
+				<Footer />
 			</BrowserRouter>
 		</UserContextProvider>
 	);

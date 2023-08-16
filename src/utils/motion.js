@@ -1,3 +1,32 @@
+export const holdAtPosition = (
+	scrollYProgress,
+	fixedHeight,
+	releaseHeight = 1,
+	loud = false
+) => {
+	const hold = useTransform(scrollYProgress, (pos) => {
+		loud && console.log(pos);
+		return pos < releaseHeight && pos >= fixedHeight && pos > 0
+			? "fixed"
+			: "relative";
+	});
+	return hold;
+};
+export const stickyAtPosition = (
+	scrollYProgress,
+	fixedHeight,
+	releaseHeight = 1,
+	loud = false
+) => {
+	const hold = useTransform(scrollYProgress, (pos) => {
+		loud && console.log(pos);
+		return pos < releaseHeight && pos >= fixedHeight && pos > 0
+			? "sticky"
+			: "relative";
+	});
+	return hold;
+};
+
 export const textVariant = (delay) => {
 	return {
 		hidden: {
