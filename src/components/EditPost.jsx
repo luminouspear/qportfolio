@@ -176,7 +176,7 @@ const EditPost = () => {
 				/>
 				{files && (
 					<img
-						src={"http://localhost:4000/uploads/" + files[0].name}
+						src={`${path}/uploads/` + files[0].name}
 						alt="Current image"
 						className="object-contain w-16 h-16"
 					/>

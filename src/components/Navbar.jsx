@@ -118,8 +118,8 @@ const Navbar = () => {
 						Dan McCollum{" "}
 						<span className="relative hidden text-sm font-thin md:inline-block font-archivo">
 							<span className="">|</span> Designer,
-							Educator,&nbsp;
-							<span className="">Developer</span>
+							Educator&nbsp;
+							<span className="">&amp;&nbsp;Developer</span>
 						</span>
 					</p>
 				</Link>

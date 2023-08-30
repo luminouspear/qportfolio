@@ -36,7 +36,7 @@ const BlogPostPage = () => {
 					{postInfo.mainImage && (
 						<img
 							className="h-[33%] w-auto mx-auto object-cover"
-							src={`http://localhost:4000/${postInfo.mainImage}`}
+							src={`${path}/${postInfo.mainImage}`}
 						/>
 					)}
 					<h1

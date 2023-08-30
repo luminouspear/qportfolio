@@ -288,9 +288,9 @@ const experiences = [
 		iconBg: "#fff",
 		date: "August 2019 - April 2023",
 		points: [
-			"Trained over 120 professionals across a diverse range of backgrounds, skills and abilities in basic and advanced user experience design.",
-			"Created and lead cross-functional developer-designer student projects, fostering a thriving community of mentor alumni.",
+			"Managed and trained over 150 new designers with a diverse range of backgrounds, skills and abilities in basic and advanced user experience design.",
 			"Completely revised and rewrote the user experience design curriculum from the ground up to meet a modern online learning environment and drive student engagement.",
+			"Created and lead cross-functional developer-designer student projects, fostering a thriving community of mentor alumni.",
 			"Completed all cohorts with outstanding NPS scores, including a perfect 100 🏅 in the final cohort.",
 		],
 	},
@@ -302,11 +302,10 @@ const experiences = [
 		iconBg: "#fff",
 		date: "Jun 2012 - Jun 2019",
 		points: [
-			'Lead designer for flagship Disney projects including the Walt Disney World "My Disney Experience" mobile app, the Disney Cruise Line app, Walt Disney World Resort eCommerce, and the 2015 redesign of Disney\'s FastPass+ Service in Walt Disney World. ',
+			'Lead designer for flagship Disney products including the Walt Disney World mobile app, the Disney Cruise Line app, Walt Disney World Resort eCommerce, and the 2015 redesign of Disney\'s FastPass+ Service in Walt Disney World. ',
 			"Responsible for end-to-end user experience and product design deliverables for our team, including early strategic planning, budgeting, estimations and creating timelines, all aspects of pre- and post-release research and testing, and delivering experiences that transcended guest expectations.",
-			"Practitioner with outstanding skills in information architecture, interaction design, wireframing, detailed functional prototyping, user interviews, surveying and testing.",
-			"Lead multiple projects for each of the following Disney brands:",
-			"Walt Disney World, Disneyland Resort, Disney Cruise Line, Disney's Aulani Resort & Spa, Disney Consumer Products, Disney Vacation Club, Adventures by Disney, Disney Institute, Disney Meetings, Disney Weddings, Disney Youth, Shanghai Disneyland, Hong Kong Disneyland, runDisney, Disney's Golden Oak, Disney's Club 33, ESPN Wide World of Sports",
+			"Practitioner specializing in information architecture, interaction design, wireframing, detailed functional prototyping, user interviews, surveying and testing.",
+			"Experience working on a wide variety of brands, product initiatives and sales strategies, from Disney businesses as diverse as ESPN's Wide World of Sports to Disney Institute.",
 		],
 	},
 	{
@@ -318,7 +317,7 @@ const experiences = [
 		points: [
 			"Taught upper-division Information Design, User Experience Design and Future Design courses at the Woodbury University School of Media, Culture and Design.",
 			"Worked with academic advisors to create and develop unique curriculum in alignment with national accreditation standards.",
-			"Taught industry design standards and principles to help students build a professional portfolio and begin to develop their professional practice. Led class time, lectures, workshops, out-of-class communication with students and grading.",
+			"Taught industry design standards and principles to help students build a professional portfolio and begin to develop their professional practice.","Led class time, lectures, workshops, out-of-class communication with students and grading.",
 		],
 	},
 	{

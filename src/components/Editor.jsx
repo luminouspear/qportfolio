@@ -4,7 +4,7 @@ export default function Editor({ value, onChange }) {
 	const toolbarOptions = [
 		["bold", "italic", "underline", "strike"], // toggled buttons
 		["blockquote", "code-block"],
-		["link", "image"],
+		["link", "image", "video"],
 		[({ header: 1 }, { header: 2 })], // custom button values
 		[{ list: "ordered" }, { list: "bullet" }],
 		[{ script: "sub" }, { script: "super" }], // superscript/subscript
