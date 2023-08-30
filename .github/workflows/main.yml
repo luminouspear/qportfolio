@@ -57,3 +57,4 @@ jobs:
                   passphrase: ${{ secrets.SSH_PASSPHRASE }}
                   source: "/github/workspace/api/index.js,/github/workspace/api/build/,/github/workspace/api/models/"
                   target: "/home/siegpluj/danmccollum.com/"
+                  strip_components: 3
