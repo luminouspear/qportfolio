@@ -1,0 +1,46 @@
+name: Deploy to Production Server
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    name: Deploy App
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Install and Build
+      run: |
+        npm install
+        npm run build
+
+    - name: Deploy to Server
+      uses: appleboy/ssh-action@master
+      with:
+        host: ${{ secrets.SERVER_HOST }}
+        username: ${{ secrets.SERVER_USER }}
+        key: ${{ secrets.SSH_PRIVATE_KEY }}
+        passphrase: ${{ secrets.SSH_PASSPHRASE }}
+        script: |
+          # Navigate to the app directory
+          cd danmccollum.com
+
+          # Create a backup directory with the current date and time
+          backup_date=$(date +'%Y%m%d')
+          backup_time=$(date +'%H%M%S')
+          mkdir -p backup/$backup_date/$backup_time
+
+          # Move the existing files to the backup directory
+          mv index.js backup/$backup_date/$backup_time/
+          mv build/ backup/$backup_date/$backup_time/
+          mv models/ backup/$backup_date/$backup_time/
+
+          # Copy the new files to the server
+          scp -r $GITHUB_WORKSPACE/index.js .
+          scp -r $GITHUB_WORKSPACE/build/ .
+          scp -r $GITHUB_WORKSPACE/models/ .
