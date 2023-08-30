@@ -3,7 +3,7 @@ import ReactQuill from "react-quill";
 export default function Editor({ value, onChange }) {
 	const toolbarOptions = [
 		["bold", "italic", "underline", "strike"], // toggled buttons
-		["blockquote", "code-block"],
+		["blockquote", "code-block","code"],
 		["link", "image", "video"],
 		[({ header: 1 }, { header: 2 })], // custom button values
 		[{ list: "ordered" }, { list: "bullet" }],
