@@ -42,9 +42,9 @@ jobs:
                       mkdir -p backup/$backup_date/$backup_time
 
                       # Move the existing files to the backup directory
-                      [ -f index.js ] && mv index.js backup/$backup_date/$backup_time/
-                      [ -d build/ ] && mv build/ backup/$backup_date/$backup_time/
-                      [ -d models/ ] && mv models/ backup/$backup_date/$backup_time/
+                      ([ -f index.js ] && mv index.js backup/$backup_date/$backup_time/) || true
+                      ([ -d build/ ] && mv build/ backup/$backup_date/$backup_time/) || true
+                      ([ -d models/ ] && mv models/ backup/$backup_date/$backup_time/) || true
 
             - name: Copy Files to Server
               uses: appleboy/ssh-action@master
