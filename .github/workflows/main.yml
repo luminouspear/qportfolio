@@ -55,5 +55,5 @@ jobs:
                   username: ${{ secrets.SERVER_USER }}
                   key: ${{ secrets.DEPLOY_SSH_KEY }}
                   passphrase: ${{ secrets.SSH_PASSPHRASE }}
-                  source: "/github/workspace/index.js,/github/workspace/build/,/github/workspace/models/"
+                  source: "/github/workspace/api/index.js,/github/workspace/api/build/,/github/workspace/api/models/"
                   target: "/home/siegpluj/danmccollum.com/"
