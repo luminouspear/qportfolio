@@ -29,6 +29,8 @@ jobs:
                   passphrase: ${{ secrets.SSH_PASSPHRASE }}
                   script: |
 
+                      pwd
+
                       set -x
 
                       # Navigate to the app directory
