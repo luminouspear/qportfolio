@@ -48,8 +48,9 @@ jobs:
               uses: appleboy/scp-action@master
               with:
                   host: ${{ secrets.SERVER_HOST }}
+                  port: ${{ secrets.SERVER_PORT }}
                   username: ${{ secrets.SERVER_USER }}
-                  key: ${{ secrets.SSH_PRIVATE_KEY }}
+                  key: ${{ secrets.DEPLOY_SSH_KEY }}
                   passphrase: ${{ secrets.SSH_PASSPHRASE }}
                   source: "index.js,build/,models/"
                   target: "danmccollum.com/"
