@@ -54,5 +54,5 @@ jobs:
                   username: ${{ secrets.SERVER_USER }}
                   key: ${{ secrets.DEPLOY_SSH_KEY }}
                   passphrase: ${{ secrets.SSH_PASSPHRASE }}
-                  script: |
-                      scp -r -v /github/workspace/index.js /github/workspace/build/ /github/workspace/models/ siegpluj@${{ secrets.SERVER_HOST }}:/home/siegpluj/danmccollum.com/
+                  source: "index.js,build/,models/"
+                  target: "${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }}:${{ secrets.SERVER_PORT }}:/home/siegpluj/danmccollum.com/"
