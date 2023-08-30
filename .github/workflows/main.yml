@@ -34,7 +34,7 @@ jobs:
                       set -x
 
                       # Navigate to the app directory
-                      cd danmccollum.com
+                      cd /home/siegpluj/danmccollum.com
 
                       # Create a backup directory with the current date and time
                       backup_date=$(date +'%Y%m%d')
@@ -55,4 +55,4 @@ jobs:
                   key: ${{ secrets.DEPLOY_SSH_KEY }}
                   passphrase: ${{ secrets.SSH_PASSPHRASE }}
                   source: "index.js,build/,models/"
-                  target: "danmccollum.com/"
+                  target: "/home/siegpluj/danmccollum.com/"
