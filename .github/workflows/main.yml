@@ -28,6 +28,9 @@ jobs:
                   key: ${{ secrets.DEPLOY_SSH_KEY }}
                   passphrase: ${{ secrets.SSH_PASSPHRASE }}
                   script: |
+
+                      set -x
+
                       # Navigate to the app directory
                       cd danmccollum.com
 
