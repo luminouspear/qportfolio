@@ -76,7 +76,7 @@ const BlogPostPage = () => {
 						))}
 					</ul>
 					<p
-						className="container w-full pb-12 mx-8 mt-12 text-base leading-loose lg:w-8/12 md:mx-auto lg:px-16 first-letter:block first-letter:text-6xl first-letter:align-text-top first-letter:float-left first-letter:mt-1 first-letter:mr-1 "
+						className="container w-full pb-12 mx-8 mt-12 text-base leading-loose blog-post-content lg:w-8/12 md:mx-auto lg:px-16 first-letter:block first-letter:text-6xl first-letter:align-text-top first-letter:float-left first-letter:mt-1 first-letter:mr-1 "
 						dangerouslySetInnerHTML={{ __html: postInfo.content }}
 					/>
 				</div>

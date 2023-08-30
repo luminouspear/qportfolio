@@ -18,7 +18,7 @@
 	font-weight: 400;
 
 	color-scheme: light dark;
-	color: #0C0E07;
+	color: #0c0e07;
 	background-color: #f5f2ed;
 
 	font-synthesis: none;
@@ -34,7 +34,7 @@ a {
 	text-decoration: inherit;
 }
 a:hover {
-	color: #2FB1A2;
+	color: #2fb1a2;
 }
 
 /* body {
@@ -258,7 +258,7 @@ underline-secondary::after {
 }
 
 .underline-primary::after {
-	background-color: #2FB1A2;
+	background-color: #2fb1a2;
 }
 .underline-secondary::after {
 	background-color: black;
@@ -267,4 +267,42 @@ underline-secondary::after {
 .underline-primary.animate::after,
 underline-secondary.animate::after {
 	width: 100%;
+}
+
+.ql-toolbar {
+	position: sticky;
+	top: 4rem;
+	z-index: 1000;
+	background-color: white;
+}
+
+.ql-editor {
+	min-height: 40vh;
+	background-color: rgba(255, 255, 255, 0.9);
+}
+
+.blog-post-content ul {
+	list-style-type: disc;
+	padding-left: 1rem;
+}
+
+.blog-post-content iframe.ql-video {
+	width: 80%;
+	aspect-ratio: 16/9;
+	display: flex;
+	justify-content:center;
+	margin: 0 auto;
+}
+
+.blog-post-content p > img {
+	width: 80%;
+	border-radius: 0.25rem;
+	margin: 0 auto;
+}
+
+.blog-post-content h2 {
+	font-size: 1.6rem;
+}
+.blog-post-content h3 {
+	font-size: 1.2rem;
 }
