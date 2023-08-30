@@ -30,7 +30,7 @@ const NewPost = () => {
 
 	const { loading, userInfo } = useContext(UserContext);
 
-	useRedirectIfNotLoggedIn();
+	useRedirectIfNotLoggedIn()
 
 	const username = userInfo?.username;
 
