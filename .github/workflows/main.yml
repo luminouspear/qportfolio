@@ -47,7 +47,7 @@ jobs:
                       ([ -d models/ ] && mv models/ backup/$backup_date/$backup_time/) || true
 
             - name: Copy Files to Server
-              uses: appleboy/ssh-action@master
+              uses: appleboy/scp-action@master
               with:
                   host: ${{ secrets.SERVER_HOST }}
                   port: ${{ secrets.SERVER_PORT }}
@@ -55,4 +55,4 @@ jobs:
                   key: ${{ secrets.DEPLOY_SSH_KEY }}
                   passphrase: ${{ secrets.SSH_PASSPHRASE }}
                   source: "index.js,build/,models/"
-                  target: "${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }}:${{ secrets.SERVER_PORT }}:/home/siegpluj/danmccollum.com/"
+                  target: "/home/siegpluj/danmccollum.com/"
