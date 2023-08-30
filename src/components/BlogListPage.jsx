@@ -14,7 +14,7 @@ const BlogListPage = () => {
 
 	useEffect(() => {
 		const fetchData = async () => {
-			const allPostsResponse = await fetch(`${path}/posts`);
+			const allPostsResponse = await fetch(`${path}/api/posts`);
 			const allPosts = await allPostsResponse.json();
 
 			const firstFeaturedPost = allPosts.find((post) => post.featured);

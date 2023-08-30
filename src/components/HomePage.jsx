@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import {
 	About,
 	Contact,
@@ -16,11 +16,13 @@ import {
 import { UserContext } from "../UserContext";
 
 const HomePage = () => {
-
 	const { isLoggedIn } = useContext(UserContext);
-	const loginGate = true
+	const loginGate = true;
 	// console.log("isLoggedIn: ", isLoggedIn)
 
+	useEffect(() => {
+		window.scrollTo(0, 0);
+	}, []);
 
 	return (
 		<>

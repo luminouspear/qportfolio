@@ -67,7 +67,7 @@ app.post("/login", async (req, res) => {
 				{ username, id: userDoc._id },
 				secret,
 				{
-					expiresIn: "14d"
+					expiresIn: "14d",
 				},
 				(err, token) => {
 					if (err) throw err;
@@ -100,7 +100,7 @@ app.get("/profile", (req, res) => {
 			// Handle verification error
 			return res.status(200).json({ authenticated: false });
 		}
-		res.json({authenticated: true, user: info});
+		res.json({ authenticated: true, user: info });
 	});
 });
 
@@ -108,8 +108,12 @@ app.post("/logout", (req, res) => {
 	res.cookie("token", "").json("ok");
 });
 
+app.post("/signout", (req, res) => {
+	res.cookie("token", "").json("ok");
+});
+
 app.post(
-	"/createpost",
+	"/api/createpost",
 	uploadMiddleware.single("mainImage"),
 	async (req, res) => {
 		let filePath = "";
@@ -139,7 +143,7 @@ app.post(
 	}
 );
 
-app.put("/post", uploadMiddleware.single("mainImage"), async (req, res) => {
+app.put("/api/post", uploadMiddleware.single("mainImage"), async (req, res) => {
 	let filePath = "";
 	filePath = getFilePathForfile(req, filePath);
 
@@ -172,7 +176,7 @@ app.put("/post", uploadMiddleware.single("mainImage"), async (req, res) => {
 	});
 });
 
-app.get("/posts", async (req, res) => {
+app.get("/api/posts", async (req, res) => {
 	const defaultLimit = 20;
 	const limit = req.query.limit ? parseInt(req.query.limit) : defaultLimit;
 	const featuredArticleLimit = req.query.featuredArticles
@@ -197,7 +201,7 @@ app.get("/posts", async (req, res) => {
 	res.json(posts);
 });
 
-app.get("/post/:id", async (req, res) => {
+app.get("/api/post/:id", async (req, res) => {
 	const { id } = req.params;
 
 	if (!id) {
@@ -205,13 +209,19 @@ app.get("/post/:id", async (req, res) => {
 	}
 	try {
 		postDoc = await Post.findById(id).populate("author", ["username"]);
+		if (!postDoc) {
+			return res.status(404).json({ error: "Post not found." });
+		}
 		res.json(postDoc);
 	} catch (err) {
+		if (err.kind === "ObjectId" && err.name === "CastError") {
+			return res.status(404).json({ error: "Post not found." });
+		}
 		res.status(500).json({ error: err.message });
 	}
 });
 
-app.delete("/post/:id", async (req, res) => {
+app.delete("/api/post/:id", async (req, res) => {
 	const { id } = req.params;
 
 	if (!id) {

@@ -15,7 +15,7 @@ export default function BlogList() {
 				: "http://127.0.0.1:4000";
 
 	useEffect(() => {
-		fetch(`${path}/posts?limit=3`).then((response) => {
+		fetch(`${path}/api/posts?limit=3`).then((response) => {
 			response.json().then((posts) => {
 				setPosts(posts);
 			});

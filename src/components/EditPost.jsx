@@ -77,7 +77,7 @@ const EditPost = () => {
 			data.set("mainImage", files[0]);
 		}
 
-		const response = await fetch(`${path}/post`, {
+		const response = await fetch(`${path}/api/post`, {
 			method: "PUT",
 			body: data,
 			credentials: "include",
@@ -88,7 +88,7 @@ const EditPost = () => {
 	}
 
 	async function deletePost() {
-		const response = await fetch(`${path}/post/` + id, {
+		const response = await fetch(`${path}/api/post/` + id, {
 			method: "DELETE",
 			credentials: "include",
 		});
@@ -105,7 +105,11 @@ const EditPost = () => {
         } else {
             setShowConfirmDelete(true)
         }
-    }
+	}
+
+	const removeImage = () => {
+		setFiles(null);
+	};
 
 	if (redirect) {
 		return <Navigate to={`/post/${id}`} />;
@@ -175,11 +179,15 @@ const EditPost = () => {
 					className="px-2 my-2"
 				/>
 				{files && (
-					<img
-						src={`${path}/uploads/` + files[0].name}
-						alt="Current image"
-						className="object-contain w-16 h-16"
-					/>
+					<div className="flex items-center gap-2">
+						<img
+							src={`${path}/uploads/` + files[0].name}
+							alt="Current image"
+							className="object-contain w-16 h-16"
+						/>
+						        <button onClick={removeImage} className="text-red-500">Remove Image</button>
+					</div>
+
 				)}
 				<Editor
 					className="my-2 bg-white"

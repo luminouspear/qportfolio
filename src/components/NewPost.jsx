@@ -54,7 +54,7 @@ const NewPost = () => {
         data.set("date", publicationDate ? publicationDate : currentTimestamp);
 
 		e.preventDefault();
-		const response = await fetch(`${path}/createpost`, {
+		const response = await fetch(`${path}/api/createpost`, {
 			method: "POST",
 			body: data,
 			credentials: "include",

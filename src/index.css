@@ -306,3 +306,9 @@ underline-secondary.animate::after {
 .blog-post-content h3 {
 	font-size: 1.2rem;
 }
+
+.ql-hero {
+	width:100%;
+	height:20vh;
+	object-fit: cover;
+}

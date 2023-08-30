@@ -45,7 +45,6 @@ const App = () => {
 							</Route>
 							<Route path={"/blog"} element={<BlogListPage />} />
 							<Route path={"/edit/:id"} element={<EditPost />} />
-							<Route path={"/test"} element={<CaseStudyv2 />} />
 							<Route path={"/404"} element={<NotFoundPage />} />
 						</Routes>
 					</div>
