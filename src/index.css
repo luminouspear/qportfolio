@@ -303,13 +303,14 @@ underline-secondary.animate::after {
 .blog-post-content blockquote {
 	font-style: italic;
 	font-weight: 600;
-	margin-left:1rem;
-	padding-left: 1rem;
+	margin-left: 1.5rem;
+	padding-left: 2rem;
 	position: relative;
+	width: 80%;
 }
 
 .blog-post-content blockquote::before {
-	content: "\"";
+	content: '\201C';
 	position: absolute;
 	font-size:4rem;
 	min-height: fit-content;
@@ -345,6 +346,7 @@ underline-secondary.animate::after {
   font-size:0.8rem;
   border-radius:0.25rem;
   line-height:1.5rem;
+  margin: 1.5rem auto;
 
 }
 
