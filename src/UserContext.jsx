@@ -20,8 +20,10 @@ export function UserContextProvider({ children }) {
 			.then((data) => {
 				if (data.authenticated) {
 					setIsLoggedIn(true);
+					setUserInfo(data.user)
 				} else {
 					setIsLoggedIn(false);
+					setUserInfo({})
 				}
 			})
 			.finally(() => {

@@ -12,7 +12,7 @@ const Navbar = () => {
 	const [active, setActive] = useState("");
 	const [toggle, setToggle] = useState(false);
 
-	const { userInfo, setUserInfo, updateLoginStatus, isLoggedIn } =
+	const { userInfo, setUserInfo, updateLoginStatus, isLoggedIn, loading } =
 		useContext(UserContext);
 
 	const username = userInfo?.username;
@@ -123,8 +123,9 @@ const Navbar = () => {
 						</span>
 					</p>
 				</Link>
+				{loading ? <div></div> :
 				<ul className="flex-row hidden gap-10 mt-2 list-none md:flex md:gap-6 font-archivo">
-					{navLinks.map((link) => {
+					 {navLinks.map((link) => {
 						return (
 							<li
 								key={link.id}
@@ -143,7 +144,7 @@ const Navbar = () => {
 							</li>
 						);
 					})}
-				</ul>
+				</ul>}
 				<div className="flex items-center justify-end flex-1 md:hidden">
 					<img
 						src={toggle ? close : menu}

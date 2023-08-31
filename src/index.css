@@ -313,6 +313,7 @@ underline-secondary.animate::after {
 	content: '\201C';
 	position: absolute;
 	font-size:4rem;
+	color: #2fb1a2;
 	min-height: fit-content;
 	margin-left:-2rem;
 	top:-2rem;

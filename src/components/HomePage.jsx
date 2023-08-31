@@ -16,7 +16,7 @@ import {
 import { UserContext } from "../UserContext";
 
 const HomePage = () => {
-	const { isLoggedIn } = useContext(UserContext);
+	const { isLoggedIn, loading } = useContext(UserContext);
 	const loginGate = true;
 	// console.log("isLoggedIn: ", isLoggedIn)
 
@@ -27,7 +27,7 @@ const HomePage = () => {
 	return (
 		<>
 			<Hero />
-			{loginGate && isLoggedIn && <BlogList />}
+			{loginGate && isLoggedIn && !loading && <BlogList />}
 			<About />
 			<Experience />
 			<Tech />
