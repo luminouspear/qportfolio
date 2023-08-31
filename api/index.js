@@ -12,8 +12,10 @@ require("dotenv").config();
 const multer = require("multer");
 const fs = require("fs");
 
-const uploadMiddleware = multer({ dest: "uploads/" });
-const isProduction = process.env.NODE_ENV === "production";
+const uploadMiddleware = multer({
+	dest: "uploads/",
+	limits: { fileSize: 10 * 1024 * 1024 },
+});
 
 const salt = bcrypt.genSaltSync(10);
 const secret = process.env.SECRET;
