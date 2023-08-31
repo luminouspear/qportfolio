@@ -14,12 +14,12 @@ export const BlogPreview = ( { _id, title, author, date, summary, mainImage, tag
 
 	return (author &&
 		<>
-			<article className="flex flex-col justify-start w-full mx-auto mt-8 mb-12 lg:flex-row lg:w-3/4 group">
+			<article className="flex flex-col justify-start w-full mx-auto mt-8 mb-12 md:flex-row md:space-x-4 group">
 				{mainImage &&
 					setLink(
 						<img
 							src={`${path}/` + mainImage}
-							className="object-cover w-64 h-auto rounded-lg cursor-pointer"
+							className="object-cover w-64 h-auto m-2 rounded-lg cursor-pointer"
 						/>
 					)}
 				<div
@@ -52,9 +52,9 @@ export const BlogPreview = ( { _id, title, author, date, summary, mainImage, tag
 							</li>
 						))}
 					</ul>
-					<p className="w-full text-base">{summary}</p>
+				{setLink(<p className="w-full text-base group-hover:text-primary-green group-hover:cursor-pointer">{summary}</p>)}
 					{setLink(
-						<button className="w-full font-bold text-right cursor-pointer text-primary-green hover:text-secondary-green hover:underline">
+						<button className="w-full font-bold text-right cursor-pointer text-primary-green group-hover:text-secondary-green group-hover:underline">
 							Read More »
 						</button>
 					)}

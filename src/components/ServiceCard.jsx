@@ -23,9 +23,9 @@ export const ServiceCard = ({ index, title, icon }) => {
 				<img
 					src={icon}
 					alt={title}
-					className="object-contain w-24 h-24 mb-8"
+					className="object-contain w-24 h-24 mb-8 md:mb-0 md:w-12 lg:h-16 lg:w-16 lg:mb-2"
 				/>
-				<h3 className="text-xl font-bold text-center text-qportfolio-white group-hover:text-qportfolio-white">
+				<h3 className="text-xl font-bold text-center text-qportfolio-white group-hover:text-qportfolio-white md:text-base">
 					{title}
 				</h3>
 			</motion.div>

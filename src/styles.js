@@ -33,5 +33,5 @@ export const getNavLinkStyle = (active, title) => {
 		active === title
 			? "font-archivo text-qportfolio-white md:text-secondary-green mb-[10%] border-b-2  md:text-secondary-green "
 			: "text-qportfolio-white md:text-qportfolio-black "
-	} hover:text-secondary-green  text-[24px] md:text-sm md:whitespace-nowrap lg:text-lg lg:text-base font-medium cursor-pointer mx-1`;
+	} hover:text-secondary-green  text-[24px] md:text-[10pt] md:whitespace-nowrap lg:text-sm font-medium cursor-pointer mx-0`;
 };

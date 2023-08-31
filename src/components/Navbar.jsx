@@ -114,7 +114,7 @@ const Navbar = () => {
 						alt="logo"
 						className="object-contain mr-1 w-9 h-9"
 					/>
-					<p className="text-primary-green text-[16px] font-bold cursor-pointer font-gloock">
+					<p className="text-primary-green text-[16px] font-bold cursor-pointer font-gloock whitespace-nowrap">
 						Dan McCollum{" "}
 						<span className="relative hidden text-sm font-thin md:inline-block font-archivo">
 							<span className="">|</span> Designer,
@@ -124,7 +124,7 @@ const Navbar = () => {
 					</p>
 				</Link>
 				{loading ? <div></div> :
-				<ul className="flex-row hidden gap-10 mt-2 list-none md:flex md:gap-6 font-archivo">
+				<ul className="hidden mt-2 list-none md:flex-row md:max-w-md md:flex-wrap md:flex md:gap-2 lg:gap-6 font-archivo whitespace-nowrap md:align-right md:justify-end">
 					 {navLinks.map((link) => {
 						return (
 							<li
