@@ -27,10 +27,7 @@ import CaseStudyv2 from "./components/casestudy/CaseStudyv2.jsx";
 import withAuthProtection from "./hoc/withAuthProtection";
 
 const App = () => {
-	const debugWindowSize =
-		process.env.NODE_ENV === "production"
-			? "false"
-			: "true";
+	const debugWindowSize = false;
 
 	const ProtectedBlogListPage = withAuthProtection(BlogListPage);
 	const ProtectedBlogPostPage = withAuthProtection(BlogPostPage);
